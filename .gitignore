@@ -1,0 +1,15 @@
+# Rails Log Files
+*.log
+
+# Mac OS X
+.DS_Store
+
+# Vim
+*.swp
+
+# Emacs
+\#*#
+*~
+
+# Other Hidden Files
+#.*
