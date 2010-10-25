@@ -9,6 +9,38 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20101025174716) do
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "interests", :force => true do |t|
+    t.string   "name"
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "interests_users", :id => false, :force => true do |t|
+    t.integer "interest_id", :null => false
+    t.integer "user_id",     :null => false
+  end
+
+  add_index "interests_users", ["interest_id", "user_id"], :name => "index_interests_users_on_interest_id_and_user_id", :unique => true
+
+  create_table "users", :force => true do |t|
+    t.string   "username"
+    t.string   "password"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "photo"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
