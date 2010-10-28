@@ -1,5 +1,6 @@
-# Rails Log Files
+# Rails
 *.log
+*.sqlite3
 
 # Mac OS X
 .DS_Store
