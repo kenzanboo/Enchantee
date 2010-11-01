@@ -6,6 +6,14 @@
 
 require 'rubygems'
 require 'spork'
+
+def create_user(username, password)
+  User.create!(:username => username, 
+               :password => password, 
+               :password_confirmation => password, 
+               :first_name => username, 
+               :last_name => username)
+end
  
 Spork.prefork do
   ENV["RAILS_ENV"] ||= "cucumber"
