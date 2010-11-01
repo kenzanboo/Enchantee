@@ -5,3 +5,7 @@
 #   
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
+category_list=["Music", "Sports", "Politics", "Fashion", "Movies", "Television", "Art", "Travel", "Technology", "Academics", "Food", "Gossip"]
+@categories=category_list.map do |category|
+  Category.create(:name=>category)
+end
