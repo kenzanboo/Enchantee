@@ -24,4 +24,5 @@ module NearbyHelper
     when :miles then 3963
     else raise "Invalid units for radius"
     end
+  end
 end
