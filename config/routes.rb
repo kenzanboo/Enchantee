@@ -44,10 +44,13 @@ ActionController::Routing::Routes.draw do |map|
   map.root :controller => "placeholder", :action => "index"
 
   # See how all your routes lay out with "rake routes"
+  map.nearby_list '/nearby/list', :controller => 'nearby', :action => 'list'
+  map.nearby_map '/nearby/map', :controller => 'nearby', :action => 'map'
 
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing or commenting them out if you're using named routes and resources.
+  map.connect ':controller/:action'
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
 end

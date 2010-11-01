@@ -7,9 +7,10 @@ class NearbyController < ApplicationController
   end
   
   def list
-    @users = User.find(:all, :origin => current_user, within => RADIUS)
+    @users = User.find(:all, :origin => current_user, :within => RADIUS, :order => 'distance')
   end
   
   def map
+    @users = User.find(:all, :origin => current_user, :within => RADIUS, :order => 'distance')
   end
 end
