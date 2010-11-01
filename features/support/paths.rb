@@ -10,11 +10,18 @@ module NavigationHelpers
 
     when /the home\s?page/
       '/'
-
+    when /^(.*)'s edit interests page$/
+      "/users/#{User.find_by_username($1).id}/interests/edit"#edit_path(User.find_by_username($1))
+    when /^(.*)'s add interest page$/
+      "/users/#{User.find_by_username($1).id}/interests/new"#add_interest_user_path(User.find_by_username($1))
+    when /^(.*)'s show interests page$/
+      "/users/#{User.find_by_username($1).id}/interests"#show_interests_user_path(User.find_by_username($1))
+    when /^the signup page$/
+      "/users/new"
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
-    #   when /^(.*)'s profile page$/i
+    #   when /^(.*)'s profile page$/
     #     user_profile_path(User.find_by_login($1))
 
     else

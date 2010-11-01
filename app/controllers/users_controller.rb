@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  
+  before_filter :require_user, :only => [:edit, :edit_interests, :show, :show_interests]
+  
   # GET /users
   # GET /users.xml
   def index
@@ -78,6 +81,47 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(users_url) }
       format.xml  { head :ok }
+    end
+  end
+  
+  def add_interest
+    @interest = Interest.new
+    @user = User.find(params[:user_id])
+    
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.xml  { render :xml => @user }
+    end
+  end
+  
+  def interests
+    @user = User.find(params[:user_id])
+    @interests = @user.interests.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @user }
+    end
+  end
+  
+  def edit_interests
+    @interest = Interest.find(params[:interest_id])
+    @user = User.find(params[:user_id])
+  end
+  
+  def create_interest
+    @interest = Interest.new(params[:interest])
+    @user = User.find(params[:user_id])
+
+    respond_to do |format|
+      if @interest.save
+        format.html { redirect_to(@user, :notice => 'Interest was successfully created.') }
+        format.xml  { render :xml => @user, :status => :created, :location => @interest }
+      else
+        format.html { render :action => "new" }
+        format.xml  { render :xml => @interest.errors, :status => :unprocessable_entity }
+      end
     end
   end
 end

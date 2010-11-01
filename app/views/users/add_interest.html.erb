@@ -1,4 +1,4 @@
-<h1>Editing interest</h1>
+<h1>New interest</h1>
 
 <% form_for(@interest) do |f| %>
   <%= f.error_messages %>
@@ -12,9 +12,8 @@
     <%= f.text_field :category_id %>
   </p>
   <p>
-    <%= f.submit 'Update' %>
+    <%= f.submit 'Create' %>
   </p>
 <% end %>
 
-<%= link_to 'Show', show_interest(@interest) %> |
-<%= link_to 'Back', interests_path %>
+<%= link_to 'Back', user_interests_path(@user) %>
