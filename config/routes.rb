@@ -1,9 +1,14 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :interests
+  map.resources :interests, :has_many => :users, :has_one => :category
 
-  map.resources :categories
+  map.resources :categories, :has_many => [ :interests, :users]
 
-  map.resources :users
+  map.resources :users#, :has_many => [ :interests, :categories ]
+  
+  map.user_interests 'users/:user_id/interests/', :controller => "users", :action => "interests"
+  map.new_user_interest 'users/:user_id/interests/new', :controller => "users", :action => "add_interest"
+  map.edit_user_interests 'users/:user_id/interests/:interest_id/edit', :controller => "users", :action => "edit_interests"
+  map.create_user_interest 'users/:user_id/interests/', :controller => "users", :action => "create_interests"
   
   map.resource :user_session
   map.login "login", :controller => "user_sessions", :action => "new"
