@@ -1,6 +1,15 @@
 module NearbyHelper
   
   RAD_PER_DEG = 0.017453293
+  DEG_PER_RAD = 57.2957795
+  
+  def delta_latlong(latitude, longitude, distance, units)
+    dlat_rad = distance / earth_radius(units)
+    dlon_rad = distance / (earth_radius(units) * Math.sin(latitude * RAD_PER_DEG))
+    dlat = dlat_rad * DEG_PER_RAD
+    dlon = dlon_rad * DEG_PER_RAD
+    return (latitude-dlat)..(latitude+dlat), (longitude-dlon)..(latitude+dlon)
+  end
   
   def haversine_distance(lat1, lon1, lat2, lon2, units)
     dlon = lon2 - lon1
