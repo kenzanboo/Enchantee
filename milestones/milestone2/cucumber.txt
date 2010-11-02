@@ -1,0 +1,257 @@
+Using the default profile...
+..F-.......F--.F---.F-------.FUUUU..........FU.....U--U-U
+
+(::) failed steps (::)
+
+You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.+ (ActionView::TemplateError)
+On line #8 of app/views/placeholder/index.html.erb
+
+    5: <hr/>
+    6: 
+    7: <% if current_user %>
+    8:   <p>Hello, <%= current_user.name %>. You are logged in as <%= current_user.username %>.</p>
+    9:   <%= link_to "Logout", logout_path %><br/>
+    10: <% else %>
+    11:   <%= link_to "Login", login_path %><br/>
+
+    app/models/user.rb:9:in `name'
+    app/views/placeholder/index.html.erb:8
+    /Library/Ruby/Gems/1.8/gems/rspec-rails-1.3.2/lib/spec/rails/extensions/action_view/base.rb:27:in `render'
+    app/controllers/placeholder_controller.rb:3:in `index'
+    webrat (0.7.1) lib/webrat/adapters/rails.rb:50:in `send'
+    webrat (0.7.1) lib/webrat/adapters/rails.rb:50:in `do_request'
+    webrat (0.7.1) lib/webrat/adapters/rails.rb:15:in `get'
+    (__FORWARDABLE__):3:in `__send__'
+    (__FORWARDABLE__):3:in `get'
+    webrat (0.7.1) lib/webrat/core/session.rb:280:in `send'
+    webrat (0.7.1) lib/webrat/core/session.rb:280:in `process_request'
+    webrat (0.7.1) lib/webrat/core/session.rb:119:in `request_page'
+    webrat (0.7.1) lib/webrat/core/session.rb:132:in `request_page'
+    webrat (0.7.1) lib/webrat/core/elements/form.rb:20:in `submit'
+    webrat (0.7.1) lib/webrat/core/elements/field.rb:193:in `click'
+    webrat (0.7.1) lib/webrat/core/scope.rb:291:in `click_button'
+    (__FORWARDABLE__):3:in `__send__'
+    (__FORWARDABLE__):3:in `click_button'
+    webrat (0.7.1) lib/webrat/core/methods.rb:7:in `click_button'
+    features/step_definitions/authentication_steps.rb:19:in `__instance_exec0'
+    cucumber (0.9.2) bin/./lib/cucumber/core_ext/instance_exec.rb:26:in `send'
+    cucumber (0.9.2) bin/./lib/cucumber/core_ext/instance_exec.rb:26:in `instance_exec'
+    cucumber (0.9.2) bin/./lib/cucumber/core_ext/instance_exec.rb:48:in `cucumber_instance_exec'
+    cucumber (0.9.2) bin/./lib/cucumber/core_ext/instance_exec.rb:69:in `cucumber_run_with_backtrace_filtering'
+    cucumber (0.9.2) bin/./lib/cucumber/core_ext/instance_exec.rb:36:in `cucumber_instance_exec'
+    cucumber (0.9.2) bin/./lib/cucumber/rb_support/rb_step_definition.rb:54:in `invoke'
+    cucumber (0.9.2) lib/cucumber/step_match.rb:26:in `invoke'
+    cucumber (0.9.2) lib/cucumber/ast/step_invocation.rb:63:in `invoke'
+    cucumber (0.9.2) lib/cucumber/ast/step_invocation.rb:42:in `accept'
+    cucumber (0.9.2) lib/cucumber/ast/tree_walker.rb:99:in `visit_step'
+    cucumber (0.9.2) lib/cucumber/ast/tree_walker.rb:164:in `broadcast'
+    cucumber (0.9.2) lib/cucumber/ast/tree_walker.rb:98:in `visit_step'
+    cucumber (0.9.2) lib/cucumber/ast/step_collection.rb:15:in `accept'
+    cucumber (0.9.2) lib/cucumber/ast/step_collection.rb:14:in `each'
+    cucumber (0.9.2) lib/cucumber/ast/step_collection.rb:14:in `accept'
+    cucumber (0.9.2) lib/cucumber/ast/tree_walker.rb:93:in `visit_steps'
+    cucumber (0.9.2) lib/cucumber/ast/tree_walker.rb:164:in `broadcast'
+    cucumber (0.9.2) lib/cucumber/ast/tree_walker.rb:92:in `visit_steps'
+    cucumber (0.9.2) lib/cucumber/ast/scenario.rb:53:in `accept'
+    cucumber (0.9.2) lib/cucumber/runtime.rb:127:in `with_hooks'
+    cucumber (0.9.2) lib/cucumber/runtime.rb:143:in `before_and_after'
+    cucumber (0.9.2) lib/cucumber/runtime.rb:126:in `with_hooks'
+    cucumber (0.9.2) lib/cucumber/runtime/support_code.rb:98:in `call'
+    cucumber (0.9.2) lib/cucumber/runtime/support_code.rb:98:in `around'
+    cucumber (0.9.2) lib/cucumber/language_support/language_methods.rb:13:in `around'
+    cucumber (0.9.2) lib/cucumber/language_support/language_methods.rb:95:in `call'
+    cucumber (0.9.2) lib/cucumber/language_support/language_methods.rb:95:in `execute_around'
+    cucumber (0.9.2) lib/cucumber/language_support/language_methods.rb:12:in `around'
+    cucumber (0.9.2) lib/cucumber/runtime/support_code.rb:97:in `around'
+    cucumber (0.9.2) lib/cucumber/runtime/support_code.rb:95:in `call'
+    cucumber (0.9.2) lib/cucumber/runtime/support_code.rb:95:in `around'
+    cucumber (0.9.2) lib/cucumber/runtime.rb:138:in `around'
+    cucumber (0.9.2) lib/cucumber/runtime.rb:125:in `with_hooks'
+    cucumber (0.9.2) lib/cucumber/ast/scenario.rb:51:in `accept'
+    cucumber (0.9.2) lib/cucumber/ast/scenario.rb:106:in `with_visitor'
+    cucumber (0.9.2) lib/cucumber/ast/scenario.rb:45:in `accept'
+    cucumber (0.9.2) lib/cucumber/ast/tree_walker.rb:51:in `visit_feature_element'
+    cucumber (0.9.2) lib/cucumber/ast/tree_walker.rb:164:in `broadcast'
+    cucumber (0.9.2) lib/cucumber/ast/tree_walker.rb:50:in `visit_feature_element'
+    cucumber (0.9.2) lib/cucumber/ast/feature.rb:35:in `accept'
+    cucumber (0.9.2) lib/cucumber/ast/feature.rb:34:in `each'
+    cucumber (0.9.2) lib/cucumber/ast/feature.rb:34:in `accept'
+    cucumber (0.9.2) lib/cucumber/ast/tree_walker.rb:20:in `visit_feature'
+    cucumber (0.9.2) lib/cucumber/ast/tree_walker.rb:164:in `broadcast'
+    cucumber (0.9.2) lib/cucumber/ast/tree_walker.rb:19:in `visit_feature'
+    cucumber (0.9.2) lib/cucumber/ast/features.rb:29:in `accept'
+    cucumber (0.9.2) lib/cucumber/ast/features.rb:17:in `each'
+    cucumber (0.9.2) lib/cucumber/ast/features.rb:17:in `each'
+    cucumber (0.9.2) lib/cucumber/ast/features.rb:28:in `accept'
+    cucumber (0.9.2) lib/cucumber/ast/tree_walker.rb:14:in `visit_features'
+    cucumber (0.9.2) lib/cucumber/ast/tree_walker.rb:164:in `broadcast'
+    cucumber (0.9.2) lib/cucumber/ast/tree_walker.rb:13:in `visit_features'
+    cucumber (0.9.2) lib/cucumber/runtime.rb:32:in `run!'
+    cucumber (0.9.2) lib/cucumber/cli/main.rb:54:in `execute!'
+    cucumber (0.9.2) lib/cucumber/cli/main.rb:29:in `execute'
+    cucumber (0.9.2) bin/cucumber:8
+    script/cucumber:9:in `load'
+    script/cucumber:9
+features/authentication.feature:9:in `When I log in with username "bob" and password "password"'
+
+You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.map (ActionView::TemplateError)
+On line #12 of app/views/interests/new.html.erb
+
+    9:   </p>
+    10:   <p>
+    11:     <%= f.label :category_id %><br />
+    12:     <%= f.collection_select :category_id, @categories, :id, :name %>
+    13:   </p>
+    14:   <p>
+    15:     <%= f.submit 'Create' %>
+
+    app/views/interests/new.html.erb:12
+    app/views/interests/new.html.erb:3
+    /Library/Ruby/Gems/1.8/gems/rspec-rails-1.3.2/lib/spec/rails/extensions/action_view/base.rb:27:in `render'
+    /Library/Ruby/Gems/1.8/gems/rspec-rails-1.3.2/lib/spec/rails/extensions/action_view/base.rb:27:in `render'
+    app/controllers/interests_controller.rb:56:in `create'
+    app/controllers/interests_controller.rb:48:in `create'
+    webrat (0.7.1) lib/webrat/adapters/rails.rb:50:in `send'
+    webrat (0.7.1) lib/webrat/adapters/rails.rb:50:in `do_request'
+    webrat (0.7.1) lib/webrat/adapters/rails.rb:19:in `post'
+    (__FORWARDABLE__):3:in `__send__'
+    (__FORWARDABLE__):3:in `post'
+    webrat (0.7.1) lib/webrat/core/session.rb:280:in `send'
+    webrat (0.7.1) lib/webrat/core/session.rb:280:in `process_request'
+    webrat (0.7.1) lib/webrat/core/session.rb:119:in `request_page'
+    webrat (0.7.1) lib/webrat/core/elements/form.rb:20:in `submit'
+    webrat (0.7.1) lib/webrat/core/elements/field.rb:193:in `click'
+    webrat (0.7.1) lib/webrat/core/scope.rb:291:in `click_button'
+    (__FORWARDABLE__):3:in `__send__'
+    (__FORWARDABLE__):3:in `click_button'
+    webrat (0.7.1) lib/webrat/core/methods.rb:7:in `click_button'
+    features/step_definitions/web_steps.rb:24:in `__instance_exec0'
+    cucumber (0.9.2) bin/./lib/cucumber/core_ext/instance_exec.rb:26:in `send'
+    cucumber (0.9.2) bin/./lib/cucumber/core_ext/instance_exec.rb:26:in `instance_exec'
+    cucumber (0.9.2) bin/./lib/cucumber/core_ext/instance_exec.rb:48:in `cucumber_instance_exec'
+    cucumber (0.9.2) bin/./lib/cucumber/core_ext/instance_exec.rb:69:in `cucumber_run_with_backtrace_filtering'
+    cucumber (0.9.2) bin/./lib/cucumber/core_ext/instance_exec.rb:36:in `cucumber_instance_exec'
+    cucumber (0.9.2) bin/./lib/cucumber/rb_support/rb_step_definition.rb:54:in `invoke'
+    cucumber (0.9.2) lib/cucumber/step_match.rb:26:in `invoke'
+    cucumber (0.9.2) lib/cucumber/ast/step_invocation.rb:63:in `invoke'
+    cucumber (0.9.2) lib/cucumber/ast/step_invocation.rb:42:in `accept'
+    cucumber (0.9.2) lib/cucumber/ast/tree_walker.rb:99:in `visit_step'
+    cucumber (0.9.2) lib/cucumber/ast/tree_walker.rb:164:in `broadcast'
+    cucumber (0.9.2) lib/cucumber/ast/tree_walker.rb:98:in `visit_step'
+    cucumber (0.9.2) lib/cucumber/ast/step_collection.rb:15:in `accept'
+    cucumber (0.9.2) lib/cucumber/ast/step_collection.rb:14:in `each'
+    cucumber (0.9.2) lib/cucumber/ast/step_collection.rb:14:in `accept'
+    cucumber (0.9.2) lib/cucumber/ast/tree_walker.rb:93:in `visit_steps'
+    cucumber (0.9.2) lib/cucumber/ast/tree_walker.rb:164:in `broadcast'
+    cucumber (0.9.2) lib/cucumber/ast/tree_walker.rb:92:in `visit_steps'
+    cucumber (0.9.2) lib/cucumber/ast/scenario.rb:53:in `accept'
+    cucumber (0.9.2) lib/cucumber/runtime.rb:127:in `with_hooks'
+    cucumber (0.9.2) lib/cucumber/runtime.rb:143:in `before_and_after'
+    cucumber (0.9.2) lib/cucumber/runtime.rb:126:in `with_hooks'
+    cucumber (0.9.2) lib/cucumber/runtime/support_code.rb:98:in `call'
+    cucumber (0.9.2) lib/cucumber/runtime/support_code.rb:98:in `around'
+    cucumber (0.9.2) lib/cucumber/language_support/language_methods.rb:13:in `around'
+    cucumber (0.9.2) lib/cucumber/language_support/language_methods.rb:95:in `call'
+    cucumber (0.9.2) lib/cucumber/language_support/language_methods.rb:95:in `execute_around'
+    cucumber (0.9.2) lib/cucumber/language_support/language_methods.rb:12:in `around'
+    cucumber (0.9.2) lib/cucumber/runtime/support_code.rb:97:in `around'
+    cucumber (0.9.2) lib/cucumber/runtime/support_code.rb:95:in `call'
+    cucumber (0.9.2) lib/cucumber/runtime/support_code.rb:95:in `around'
+    cucumber (0.9.2) lib/cucumber/runtime.rb:138:in `around'
+    cucumber (0.9.2) lib/cucumber/runtime.rb:125:in `with_hooks'
+    cucumber (0.9.2) lib/cucumber/ast/scenario.rb:51:in `accept'
+    cucumber (0.9.2) lib/cucumber/ast/scenario.rb:106:in `with_visitor'
+    cucumber (0.9.2) lib/cucumber/ast/scenario.rb:45:in `accept'
+    cucumber (0.9.2) lib/cucumber/ast/tree_walker.rb:51:in `visit_feature_element'
+    cucumber (0.9.2) lib/cucumber/ast/tree_walker.rb:164:in `broadcast'
+    cucumber (0.9.2) lib/cucumber/ast/tree_walker.rb:50:in `visit_feature_element'
+    cucumber (0.9.2) lib/cucumber/ast/feature.rb:35:in `accept'
+    cucumber (0.9.2) lib/cucumber/ast/feature.rb:34:in `each'
+    cucumber (0.9.2) lib/cucumber/ast/feature.rb:34:in `accept'
+    cucumber (0.9.2) lib/cucumber/ast/tree_walker.rb:20:in `visit_feature'
+    cucumber (0.9.2) lib/cucumber/ast/tree_walker.rb:164:in `broadcast'
+    cucumber (0.9.2) lib/cucumber/ast/tree_walker.rb:19:in `visit_feature'
+    cucumber (0.9.2) lib/cucumber/ast/features.rb:29:in `accept'
+    cucumber (0.9.2) lib/cucumber/ast/features.rb:17:in `each'
+    cucumber (0.9.2) lib/cucumber/ast/features.rb:17:in `each'
+    cucumber (0.9.2) lib/cucumber/ast/features.rb:28:in `accept'
+    cucumber (0.9.2) lib/cucumber/ast/tree_walker.rb:14:in `visit_features'
+    cucumber (0.9.2) lib/cucumber/ast/tree_walker.rb:164:in `broadcast'
+    cucumber (0.9.2) lib/cucumber/ast/tree_walker.rb:13:in `visit_features'
+    cucumber (0.9.2) lib/cucumber/runtime.rb:32:in `run!'
+    cucumber (0.9.2) lib/cucumber/cli/main.rb:54:in `execute!'
+    cucumber (0.9.2) lib/cucumber/cli/main.rb:29:in `execute'
+    cucumber (0.9.2) bin/cucumber:8
+    script/cucumber:9:in `load'
+    script/cucumber:9
+features/manage_info.feature:10:in `And I press "Create"'
+
+undefined method `interests' for nil:NilClass (NoMethodError)
+./features/step_definitions/interest_steps.rb:7:in `/^(?:|I )have an interest "([^"]*)"$/'
+features/manage_info.feature:16:in `And I have an interest "Surfing"'
+
+Couldn't find Interest with ID=edit (ActiveRecord::RecordNotFound)
+./app/controllers/interests_controller.rb:16:in `show'
+./features/step_definitions/web_steps.rb:16:in `/^(?:|I )am on (.+)$/'
+features/manage_info.feature:23:in `And I am on bob's edit interests page'
+
+Can't find mapping from "bob's edit info page" to a path.
+Now, go and add a mapping in /Users/gyzmo/Code/cs169/enchantee/features/support/paths.rb (RuntimeError)
+./features/support/paths.rb:43:in `path_to'
+./features/step_definitions/web_steps.rb:16:in `/^(?:|I )am on (.+)$/'
+features/manage_info.feature:34:in `And I am on bob's edit info page'
+
+Missing template nearby/map.erb in view path app/views (ActionView::MissingTemplate)
+./features/step_definitions/web_steps.rb:16:in `/^(?:|I )am on (.+)$/'
+features/view_nearby.feature:10:in `And I am on the nearby users map'
+
+Failing Scenarios:
+cucumber features/authentication.feature:6 # Scenario: Successful Login
+cucumber features/manage_info.feature:5 # Scenario: Add Interests
+cucumber features/manage_info.feature:14 # Scenario: Display Interests
+cucumber features/manage_info.feature:21 # Scenario: Edit Interests
+cucumber features/manage_info.feature:32 # Scenario: Edit Name
+cucumber features/view_nearby.feature:6 # Scenario: View on map:
+
+11 scenarios (6 failed, 1 undefined, 4 passed)
+57 steps (6 failed, 16 skipped, 8 undefined, 27 passed)
+0m1.132s
+
+You can implement step definitions for undefined steps with these snippets:
+
+Given /^the field "([^"]*)" contains the text "([^"]*)"$/ do |arg1, arg2|
+  pending # express the regexp above with the code you wish you had
+end
+
+When /^I enter "([^"]*)" into the "([^"]*)" field$/ do |arg1, arg2|
+  pending # express the regexp above with the code you wish you had
+end
+
+When /^I submit the form$/ do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then /^My name should be "([^"]*)"$/ do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
+
+Then /^there should be a point on the map at location \((\d+)\.(\d+), \-(\d+)\.(\d+)\)$/ do |arg1, arg2, arg3, arg4|
+  pending # express the regexp above with the code you wish you had
+end
+
+Given /^I am logged in with username "([^"]*)" and password "([^"]*)"$/ do |arg1, arg2|
+  pending # express the regexp above with the code you wish you had
+end
+
+Given /^joe's interests include "([^"]*)"$/ do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
+
+Then /^I should see that joe's interests include "([^"]*)"$/ do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
+

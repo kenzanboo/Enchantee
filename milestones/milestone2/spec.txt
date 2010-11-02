@@ -1,0 +1,393 @@
+(in /Users/gyzmo/Code/cs169/enchantee)
+........................FFFF.F.....F.F.....................F.F........F.....FFFFFFFF............F.F.
+
+1)
+ActiveRecord::RecordNotFound in 'InterestsController POST create with invalid params assigns a newly created but unsaved interest as @interest'
+Couldn't find User without an ID
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/base.rb:1597:in `find_from_ids'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/base.rb:619:in `find'
+/Users/gyzmo/Code/cs169/enchantee/vendor/plugins/geokit-rails/lib/geokit-rails/acts_as_mappable.rb:153:in `find'
+/Users/gyzmo/Code/cs169/enchantee/app/controllers/interests_controller.rb:46:in `create'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/flash.rb:151:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/test_process.rb:567:in `process_with_test'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/test_process.rb:447:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/test_process.rb:403:in `post'
+./spec/controllers/interests_controller_spec.rb:60:
+
+2)
+ActiveRecord::RecordNotFound in 'InterestsController POST create with invalid params re-renders the 'new' template'
+Couldn't find User without an ID
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/base.rb:1597:in `find_from_ids'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/base.rb:619:in `find'
+/Users/gyzmo/Code/cs169/enchantee/vendor/plugins/geokit-rails/lib/geokit-rails/acts_as_mappable.rb:153:in `find'
+/Users/gyzmo/Code/cs169/enchantee/app/controllers/interests_controller.rb:46:in `create'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/flash.rb:151:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/test_process.rb:567:in `process_with_test'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/test_process.rb:447:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/test_process.rb:403:in `post'
+./spec/controllers/interests_controller_spec.rb:66:
+
+3)
+ActiveRecord::RecordNotFound in 'InterestsController POST create with valid params assigns a newly created interest as @interest'
+Couldn't find User without an ID
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/base.rb:1597:in `find_from_ids'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/base.rb:619:in `find'
+/Users/gyzmo/Code/cs169/enchantee/vendor/plugins/geokit-rails/lib/geokit-rails/acts_as_mappable.rb:153:in `find'
+/Users/gyzmo/Code/cs169/enchantee/app/controllers/interests_controller.rb:46:in `create'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/flash.rb:151:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/test_process.rb:567:in `process_with_test'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/test_process.rb:447:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/test_process.rb:403:in `post'
+./spec/controllers/interests_controller_spec.rb:46:
+
+4)
+ActiveRecord::RecordNotFound in 'InterestsController POST create with valid params redirects to the created interest'
+Couldn't find User without an ID
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/base.rb:1597:in `find_from_ids'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/base.rb:619:in `find'
+/Users/gyzmo/Code/cs169/enchantee/vendor/plugins/geokit-rails/lib/geokit-rails/acts_as_mappable.rb:153:in `find'
+/Users/gyzmo/Code/cs169/enchantee/app/controllers/interests_controller.rb:46:in `create'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/flash.rb:151:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/test_process.rb:567:in `process_with_test'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/test_process.rb:447:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/test_process.rb:403:in `post'
+./spec/controllers/interests_controller_spec.rb:52:
+
+5)
+ActiveRecord::RecordNotFound in 'InterestsController GET new assigns a new interest as @interest'
+Couldn't find User without an ID
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/base.rb:1597:in `find_from_ids'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/base.rb:619:in `find'
+/Users/gyzmo/Code/cs169/enchantee/vendor/plugins/geokit-rails/lib/geokit-rails/acts_as_mappable.rb:153:in `find'
+/Users/gyzmo/Code/cs169/enchantee/app/controllers/interests_controller.rb:27:in `new'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/flash.rb:151:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/test_process.rb:567:in `process_with_test'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/test_process.rb:447:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/test_process.rb:398:in `get'
+./spec/controllers/interests_controller_spec.rb:28:
+
+6)
+ActionView::TemplateError in '/interests/new.html.erb renders new interest form'
+You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.map
+On line #12 of app/views/interests/new.html.erb
+
+    9:   </p>
+    10:   <p>
+    11:     <%= f.label :category_id %><br />
+    12:     <%= f.collection_select :category_id, @categories, :id, :name %>
+    13:   </p>
+    14:   <p>
+    15:     <%= f.submit 'Create' %>
+
+    app/views/interests/new.html.erb:12
+    app/views/interests/new.html.erb:3
+    /Library/Ruby/Gems/1.8/gems/rspec-rails-1.3.2/lib/spec/rails/extensions/action_view/base.rb:27:in `render'
+    /Library/Ruby/Gems/1.8/gems/rspec-rails-1.3.2/lib/spec/rails/example/view_example_group.rb:170:in `__send__'
+    /Library/Ruby/Gems/1.8/gems/rspec-rails-1.3.2/lib/spec/rails/example/view_example_group.rb:170:in `render'
+    /spec/views/interests/new.html.erb_spec.rb:15
+    rspec (1.3.0) lib/spec/example/example_methods.rb:40:in `instance_eval'
+    rspec (1.3.0) lib/spec/example/example_methods.rb:40:in `execute'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/timeout.rb:53:in `timeout'
+    rspec (1.3.0) lib/spec/example/example_methods.rb:37:in `execute'
+    rspec (1.3.0) lib/spec/example/example_group_methods.rb:214:in `run_examples'
+    rspec (1.3.0) lib/spec/example/example_group_methods.rb:212:in `each'
+    rspec (1.3.0) lib/spec/example/example_group_methods.rb:212:in `run_examples'
+    rspec (1.3.0) lib/spec/example/example_group_methods.rb:103:in `run'
+    rspec (1.3.0) lib/spec/runner/example_group_runner.rb:23:in `run'
+    rspec (1.3.0) lib/spec/runner/example_group_runner.rb:22:in `each'
+    rspec (1.3.0) lib/spec/runner/example_group_runner.rb:22:in `run'
+    rspec (1.3.0) lib/spec/runner/options.rb:152:in `run_examples'
+    rspec (1.3.0) lib/spec/runner/command_line.rb:9:in `run'
+    rspec (1.3.0) bin/spec:5
+
+7)
+ActionView::TemplateError in '/interests/edit.html.erb renders the edit interest form'
+user_interests_url failed to generate from {:action=>"index", :controller=>"interests"} - you may have ambiguous routes, or you may need to supply additional parameters for this route.  content_url has the following required parameters: ["users", :user_id, "interests"] - are they all satisfied?
+On line #20 of app/views/interests/edit.html.erb
+
+    17: <% end %>
+    18: 
+    19: <%= link_to 'Show', @interest %> |
+    20: <%= link_to 'Back', user_interests_path %>
+
+    (eval):21:in `user_interests_path'
+    app/views/interests/edit.html.erb:20
+    /Library/Ruby/Gems/1.8/gems/rspec-rails-1.3.2/lib/spec/rails/extensions/action_view/base.rb:27:in `render'
+    /Library/Ruby/Gems/1.8/gems/rspec-rails-1.3.2/lib/spec/rails/example/view_example_group.rb:170:in `__send__'
+    /Library/Ruby/Gems/1.8/gems/rspec-rails-1.3.2/lib/spec/rails/example/view_example_group.rb:170:in `render'
+    /spec/views/interests/edit.html.erb_spec.rb:15
+    rspec (1.3.0) lib/spec/example/example_methods.rb:40:in `instance_eval'
+    rspec (1.3.0) lib/spec/example/example_methods.rb:40:in `execute'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/timeout.rb:53:in `timeout'
+    rspec (1.3.0) lib/spec/example/example_methods.rb:37:in `execute'
+    rspec (1.3.0) lib/spec/example/example_group_methods.rb:214:in `run_examples'
+    rspec (1.3.0) lib/spec/example/example_group_methods.rb:212:in `each'
+    rspec (1.3.0) lib/spec/example/example_group_methods.rb:212:in `run_examples'
+    rspec (1.3.0) lib/spec/example/example_group_methods.rb:103:in `run'
+    rspec (1.3.0) lib/spec/runner/example_group_runner.rb:23:in `run'
+    rspec (1.3.0) lib/spec/runner/example_group_runner.rb:22:in `each'
+    rspec (1.3.0) lib/spec/runner/example_group_runner.rb:22:in `run'
+    rspec (1.3.0) lib/spec/runner/options.rb:152:in `run_examples'
+    rspec (1.3.0) lib/spec/runner/command_line.rb:9:in `run'
+    rspec (1.3.0) bin/spec:5
+
+8)
+ActiveRecord::RecordInvalid in 'Interest should create a new instance given valid attributes'
+Validation failed: Category does not exist
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/validations.rb:1102:in `save_without_dirty!'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/dirty.rb:87:in `save_without_transactions!'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/transactions.rb:200:in `save!'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/database_statements.rb:136:in `transaction'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/transactions.rb:182:in `transaction'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/transactions.rb:200:in `save!'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/transactions.rb:208:in `rollback_active_record_state!'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/transactions.rb:200:in `save!'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/validations.rb:1071:in `create!'
+./spec/models/interest_spec.rb:13:
+
+9)
+Spec::Mocks::MockExpectationError in 'Category list of interests should update interest objects added to it'
+Mock "Interest_1044" received :[]= with unexpected arguments
+  expected: ("category_id", 1)
+       got: ("category_id", 5)
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/associations/association_proxy.rb:186:in `set_belongs_to_association_for'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/associations/has_many_association.rb:60:in `insert_record'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/associations/association_collection.rb:119:in `<<'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/associations/association_collection.rb:412:in `add_record_to_target_with_callbacks'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/associations/association_collection.rb:118:in `<<'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/associations/association_collection.rb:116:in `each'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/associations/association_collection.rb:116:in `<<'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/associations/association_collection.rb:141:in `transaction'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/database_statements.rb:136:in `transaction'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/transactions.rb:182:in `transaction'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/associations/association_collection.rb:140:in `transaction'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/associations/association_collection.rb:115:in `<<'
+./spec/models/category_spec.rb:27:
+
+10)
+NoMethodError in 'NearbyHelper haversine_distance should find distance correctly'
+undefined method `haversine_distance' for #<Spec::Rails::Example::HelperExampleGroup::Subclass_1::Subclass_1:0x1f56314>
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/test_process.rb:511:in `method_missing'
+./spec/helpers/nearby_helper_spec.rb:7:
+
+11)
+'/users/show.html.erb renders attributes in <p>' FAILED
+expected /value\ for\ password/, got "<p>\n  <b>Username:</b>\n  value for username\n</p>\n\n<p>\n  <b>Password:</b>\n  \n</p>\n\n<p>\n  <b>First name:</b>\n  value for first_name\n</p>\n\n<p>\n  <b>Last name:</b>\n  value for last_name\n</p>\n\n<p>\n  <b>Photo:</b>\n  value for photo\n</p>\n\n<p>\n  <b>Latitude:</b>\n  \n</p>\n\n<p>\n  <b>Longitude:</b>\n  \n</p>\n\n\n<a href=\"/users/1048/interests_list\">Interests</a> |\n<a href=\"/users/1048/edit\">Edit</a> |\n<a href=\"/users\">Back</a>"
+./spec/views/users/show.html.erb_spec.rb:19:
+
+12)
+'/users/index.html.erb renders a list of users' FAILED
+2.
+<false> is not true.
+./spec/views/users/index.html.erb_spec.rb:28:
+
+13)
+ActionController::UnknownAction in 'UsersController DELETE remove_interest redirects to the user's interests list'
+No action responded to remove_interest. Actions: add_interest, create, create_interest, destroy, edit, edit_interests, index, interests, new, show, update, and update_location
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/flash.rb:151:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/test_process.rb:567:in `process_with_test'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/test_process.rb:447:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/test_process.rb:413:in `delete'
+./spec/controllers/users_controller_spec.rb:176:
+
+14)
+NameError in 'UsersController POST create_interest assigns the requested user as @user'
+undefined local variable or method `find' for #<Class:0x249dd40>
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/base.rb:1994:in `method_missing'
+/Users/gyzmo/Code/cs169/enchantee/app/controllers/users_controller.rb:125:in `create_interest'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/flash.rb:151:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/test_process.rb:567:in `process_with_test'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/test_process.rb:447:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/test_process.rb:403:in `post'
+./spec/controllers/users_controller_spec.rb:168:
+
+15)
+ActionController::UnknownAction in 'UsersController GET add_interest assigns the requested user as @user'
+No action responded to add_interests. Actions: add_interest, create, create_interest, destroy, edit, edit_interests, index, interests, new, show, update, and update_location
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/flash.rb:151:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/test_process.rb:567:in `process_with_test'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/test_process.rb:447:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/test_process.rb:398:in `get'
+./spec/controllers/users_controller_spec.rb:160:
+
+16)
+'UsersController GET edit_interests assigns the requested interest as @interest' FAILED
+
+expected #<Interest:17118270> => #<Interest:0x105343e @name="Interest_1054">
+     got #<NilClass:4> => nil
+
+Compared using equal?, which compares object identity,
+but expected and actual are not the same object. Use
+'actual.should == expected' if you don't care about
+object identity in this example.
+
+./spec/controllers/users_controller_spec.rb:147:
+
+17)
+'UsersController GET edit_interests assigns the requested user as @user' FAILED
+
+expected #<User:17039420> => #<User:0x104003c @name="User_1055">
+     got #<NilClass:4> => nil
+
+Compared using equal?, which compares object identity,
+but expected and actual are not the same object. Use
+'actual.should == expected' if you don't care about
+object identity in this example.
+
+./spec/controllers/users_controller_spec.rb:153:
+
+18)
+NameError in 'UsersController GET interests assigns all users as @users'
+undefined local variable or method `find' for #<Class:0x249dd40>
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/base.rb:1994:in `method_missing'
+/Users/gyzmo/Code/cs169/enchantee/app/controllers/users_controller.rb:109:in `interests'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/flash.rb:151:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/test_process.rb:567:in `process_with_test'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/test_process.rb:447:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/test_process.rb:398:in `get'
+./spec/controllers/users_controller_spec.rb:138:
+
+19)
+'UsersController GET edit assigns the requested user as @user' FAILED
+
+expected #<User:18255550> => #<User:0x1168ebe @name="User_1069">
+     got #<NilClass:4> => nil
+
+Compared using equal?, which compares object identity,
+but expected and actual are not the same object. Use
+'actual.should == expected' if you don't care about
+object identity in this example.
+
+./spec/controllers/users_controller_spec.rb:41:
+
+20)
+'UsersController GET show assigns the requested user as @user' FAILED
+
+expected #<User:17846390> => #<User:0x1105076 @name="User_1071">
+     got #<NilClass:4> => nil
+
+Compared using equal?, which compares object identity,
+but expected and actual are not the same object. Use
+'actual.should == expected' if you don't care about
+object identity in this example.
+
+./spec/controllers/users_controller_spec.rb:25:
+
+Finished in 0.740586 seconds
+
+100 examples, 20 failures
