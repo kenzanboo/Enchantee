@@ -5,6 +5,7 @@ describe User do
     @valid_attributes = {
       :username => "value for username",
       :password => "value for password",
+      :password_confirmation => "value for password",
       :first_name => "value for first_name",
       :last_name => "value for last_name",
       :photo => "value for photo",
