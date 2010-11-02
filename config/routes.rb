@@ -52,6 +52,8 @@ ActionController::Routing::Routes.draw do |map|
   map.nearby_list '/nearby/list', :controller => 'nearby', :action => 'list'
   map.nearby_map '/nearby/map', :controller => 'nearby', :action => 'map'
 
+  map.update_location 'users/update_location', :controller => 'users', :action => 'update_location'
+  
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing or commenting them out if you're using named routes and resources.

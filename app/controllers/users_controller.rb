@@ -2,6 +2,15 @@ class UsersController < ApplicationController
   
   before_filter :require_user, :only => [:edit, :edit_interests, :show, :show_interests]
   
+  def update_location
+    @user = User.all
+    
+    respond_to do |format|
+      format.html # update_location.html.erb
+      format.xml  { render :xml => @users }
+    end
+  end
+  
   # GET /users
   # GET /users.xml
   def index

@@ -24,6 +24,9 @@ module NavigationHelpers
       nearby_map_path
     when /^the login page$/
       login_path
+    when /^(.*)'s update_location page$/
+      update_location
+    
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
