@@ -17,11 +17,13 @@ module NavigationHelpers
     when /^(.*)'s show interests page$/
       "/users/#{User.find_by_username($1).id}/interests"#show_interests_user_path(User.find_by_username($1))
     when /^the signup page$/
-      "/users/new"
+      signup_path
     when /^the nearby users list$/
       nearby_list_path
     when /^the nearby users map$/
       nearby_map_path
+    when /^the login page$/
+      login_path
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
