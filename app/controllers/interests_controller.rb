@@ -24,7 +24,9 @@ class InterestsController < ApplicationController
   # GET /interests/new
   # GET /interests/new.xml
   def new
-    @interest = Interest.new
+    @user=User.find(params[:user_id])
+    @interest = @user.interests.new
+    @categories = Category.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,9 +43,13 @@ class InterestsController < ApplicationController
   # POST /interests.xml
   def create
     @interest = Interest.new(params[:interest])
+    @user=User.find(params[:user_id])
 
     respond_to do |format|
       if @interest.save
+        if(@user)
+          @user.interests<<@interest
+        end
         format.html { redirect_to(@interest, :notice => 'Interest was successfully created.') }
         format.xml  { render :xml => @interest, :status => :created, :location => @interest }
       else

@@ -96,6 +96,7 @@ class UsersController < ApplicationController
   def add_interest
     @interest = Interest.new
     @user = User.find(params[:user_id])
+    @categories = Category.all
     
 
     respond_to do |format|
@@ -122,13 +123,14 @@ class UsersController < ApplicationController
   def create_interest
     @interest = Interest.new(params[:interest])
     @user = User.find(params[:user_id])
-
+    
     respond_to do |format|
       if @interest.save
-        format.html { redirect_to(@user, :notice => 'Interest was successfully created.') }
+        @user.interests<<@interest
+        format.html { redirect_to(user_interests(@user), :notice => 'Interest was successfully created.') }
         format.xml  { render :xml => @user, :status => :created, :location => @interest }
       else
-        format.html { render :action => "new" }
+        format.html { render :action => "interests" }
         format.xml  { render :xml => @interest.errors, :status => :unprocessable_entity }
       end
     end

@@ -1,6 +1,6 @@
 <h1>Editing interest</h1>
 
-<% form_for(@interest) do |f| %>
+<% form_for([@user, @interest]) do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -17,4 +17,4 @@
 <% end %>
 
 <%= link_to 'Show', @interest %> |
-<%= link_to 'Back', interests_path %>
+<%= link_to 'Back', user_interests_path %>

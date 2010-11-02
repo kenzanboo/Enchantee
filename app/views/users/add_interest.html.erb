@@ -1,6 +1,6 @@
 <h1>New interest</h1>
 
-<% form_for(@interest) do |f| %>
+<% form_for([@user, @interest]) do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -9,7 +9,7 @@
   </p>
   <p>
     <%= f.label :category_id %><br />
-    <%= f.text_field :category_id %>
+    <%= f.collection_select :category_id, @categories, :id, :name %>
   </p>
   <p>
     <%= f.submit 'Create' %>
