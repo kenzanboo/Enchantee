@@ -25,6 +25,7 @@ class UsersController < ApplicationController
   # GET /users/1.xml
   def show
     @user = User.find(params[:id])
+    @interests=@user.interests
 
     respond_to do |format|
       format.html # show.html.erb
@@ -68,6 +69,8 @@ class UsersController < ApplicationController
   # PUT /users/1.xml
   def update
     @user = User.find(params[:id])
+    @interests=@user.interests
+    
 
     respond_to do |format|
       if @user.update_attributes(params[:user])

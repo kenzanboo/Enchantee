@@ -27,6 +27,10 @@
     <%= f.label :photo %><br />
     <%= f.file_field :photo %>
   </p>
+	<div id="interests">
+		<%= render :partial => 'edit_interest_read_only', :collection => @user.interests, :as => :interest %>
+	</div>
+	<%= add_interest_link "Add Interest" %>
   <p>
     <%= f.submit 'Update' %>
   </p>

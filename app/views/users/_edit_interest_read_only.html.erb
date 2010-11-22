@@ -1,0 +1,11 @@
+<div class="interest">
+  	<p>
+      <label>Name</label>
+      <%=h interest.name %>
+    </p>
+    <p>
+      <label>Category</label>
+      <%=h interest.category.name %>
+    </p>
+  <%= link_to_function "Remove", "$(this).up('.interest').remove()" %>
+</div>

@@ -33,7 +33,13 @@
   <%=h @user.longitude %>
 </p>
 
-
-<%= link_to 'Interests', user_interests_list_path(@user)%> |
+<h>Interests:</h>
+<table>
+  <tr>
+	<th>Name</th>
+	<th>Category</th>
+  </tr>
+  <%= render :partial => 'show_interest', :collection => @interests, :as => :interest %>
+</table>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

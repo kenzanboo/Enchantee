@@ -1,0 +1,17 @@
+<div class="interest">
+
+  <% fields_for "user[interest_attributes][]", interest do |interest_form| %>
+    <%= interest_form.error_messages %>
+    
+    <p>
+      <%= interest_form.label :name %><br />
+      <%= interest_form.text_field :name %>
+    </p>
+    <p>
+      <%= interest_form.label :category_id %><br />
+      <%= interest_form.collection_select :category_id, categories, :id, :name %>
+    </p>
+    <p>
+      <%= link_to_function "Remove", "$(this).up('.interest').remove()" %>
+  <% end %>
+</div>
