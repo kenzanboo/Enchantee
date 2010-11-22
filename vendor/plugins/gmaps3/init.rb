@@ -1,2 +1,2 @@
 # Include hook code here
-require gmaps3
+require 'gmaps3'

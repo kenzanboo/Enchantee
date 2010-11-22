@@ -33,10 +33,11 @@ module Gmaps3
       @id = id
       self.width = width
       self.height = height
+      self.markers = []
     end
     
     def self.api(options = {})
-      options[:sensor] ||= "false"
+      options[:sensor] = options[:sensor] ? "true" : "false"
       query_string = "?v=3.3&sensor=" << options[:sensor]
       query_string << "&language=" << options[:language] if options[:language]
       query_string << "&region=" << options[:region] if options[:region]
