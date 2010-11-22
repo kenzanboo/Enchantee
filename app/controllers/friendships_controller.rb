@@ -2,14 +2,12 @@ class FriendshipsController < ApplicationController
   # POST /friendships
   # POST /friendships.xml
   def create
-    @friendship = current_user.friendships.build(params[:friendship])
+    @friendship = current_user.friendships.build(:friend_id => params[:friend_id])
 
-    respond_to do |format|
-      if @friendship.save
-        redirect_to(root_url, :notice => 'Added friend.')
-      else
-        redirect_to(root_url, :notice => 'Unable to add friend.')
-      end
+    if @friendship.save
+      redirect_to(user_path(params[:friend_id]), :notice => 'Added friend.')
+    else
+      redirect_to(user_path(params[:friend_id]), :notice => 'Unable to add friend.')
     end
   end
 
@@ -18,10 +16,6 @@ class FriendshipsController < ApplicationController
   def destroy
     @friendship = current_user.friendships.find(params[:id])
     @friendship.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(friendships_url), :notice => 'Removed bookmarked.' }
-      format.xml  { head :ok }
-    end
+    redirect_to(user_path(current_user), :notice => 'Removed bookmarked.')
   end
 end
