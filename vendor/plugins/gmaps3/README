@@ -1,13 +1,33 @@
 Gmaps3
 ======
 
-Introduction goes here.
+Quick and dirty plugin to provide a rails mechanism for Google Maps
 
 
 Example
 =======
 
-Example goes here.
+Controller:
+	map = new GMap("my_map");
+	map.width = 400
+	map.height = 400
+	
+	marker1 = new Marker(lat, long)
+	marker1.title = "Hello World"
+	marker1.contents = "<h1>Hello World!</h1>"
+	map.center = marker1
+	map.markers = [marker1]
+
+View:
+	<html>
+		<head>
+			<%= GMap.api %>
+			<%= map.write %>
+		</head>
+		<body>
+			<%= map.div %>
+		</body>
+	</html>
 
 
-Copyright (c) 2010 [name of plugin creator], released under the MIT license
+Copyright (c) 2010 [Max Johnson], released under the MIT license

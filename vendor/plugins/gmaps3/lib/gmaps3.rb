@@ -1,4 +1,5 @@
 # Gmaps3
-require 'gmaps3/key.rb'
+require 'gmaps3/map.rb'
+require 'gmaps3/marker.rb'
 
 include Gmaps3

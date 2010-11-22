@@ -35,7 +35,7 @@ module Gmaps3
       self.height = height
     end
     
-    def api(options = {})
+    def self.api(options = {})
       options[:sensor] ||= "false"
       query_string = "?v=3.3&sensor=" << options[:sensor]
       query_string << "&language=" << options[:language] if options[:language]
