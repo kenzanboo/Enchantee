@@ -45,8 +45,9 @@ module Gmaps3
     end
     
     def write(options = {})
-      options[:zoom] ||= 8
+      options[:zoom] ||= 18
       options[:type] ||= "google.maps.MapTypeId.ROADMAP"
+      options[:css] ||= true
       var = options[:variable] || 'map'
       out = "<script type=\"text/javascript\">\n"
       out << "function initialize() {\n"
@@ -56,24 +57,29 @@ module Gmaps3
       out << "    mapTypeId: #{options[:type]}\n"
       out << "  }\n"
       out << "  var #{var} = new google.maps.Map($('#{id}'), options);\n"
-      out << "  var marker, infowindow;\n"
-      markers.each do |marker|
-        out << "  marker = new google.maps.Marker({\n"
+      out << "  var marker = new Array();\n"
+      out << "  var infowindow = new Array();\n"
+      markers.each_with_index do |marker, index|
+        out << "  marker[#{index}] = new google.maps.Marker({\n"
         out << "    position: new google.maps.LatLng(#{marker.latitude},#{marker.longitude}),\n"
         out << "    map: #{var},\n"
         out << "    title: #{marker.title_string},\n"
         out << "  });\n"
         if marker.contents
-          out << "  infowindow = new google.maps.InfoWindow({content:#{marker.contents_string}});\n"
-          out << "  google.maps.event.addListener(marker, 'click', function() {\n"
-          out << "    infowindow.open(#{var},marker);\n"
+          out << "  infowindow[#{index}] = new google.maps.InfoWindow({content:#{marker.contents_string}});\n"
+          out << "  google.maps.event.addListener(marker[#{index}], 'click', function() {\n"
+          out << "    infowindow.each(function(window) {window.close();});\n"
+          out << "    infowindow[#{index}].open(#{var},marker[#{index}]);\n"
           out << "  });\n"
         end
-      end
+      end  
+      out << "  google.maps.event.addListener(map, 'click', function() {\n"
+      out << "    infowindow.each(function(window) {window.close();});\n"
+      out << "  });\n"
       out << "}\n"
       out << "Event.observe(window, 'load', initialize);\n"
       out << "</script>\n"
-      out << "<style type=\"text/css\">\##{id} {width:#{width}; height:#{height}}"
+      out << "<style type=\"text/css\">\##{id} {width:#{width}; height:#{height}}</style>" if options[:css]
       out
     end
     
