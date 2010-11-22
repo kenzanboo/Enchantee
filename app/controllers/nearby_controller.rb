@@ -1,5 +1,7 @@
 class NearbyController < ApplicationController
   
+  before_filter :check_location
+  
   RADIUS = 0.2
   
   def index
@@ -11,6 +13,9 @@ class NearbyController < ApplicationController
   end
   
   def map
+    unless current_user.latitude and current_user.longitude
+      raise "User has no location"
+    end
     @map = GMap.new("nearby_users")
     @map.center = make_marker(current_user)
     users = User.find(:all, :origin => current_user, :within => RADIUS, :order => 'distance')
@@ -20,6 +25,10 @@ class NearbyController < ApplicationController
   end
   
   private
+    def check_location()
+      raise "Error: User has no location" unless current_user and current_user.latitude and current_user.longitude
+    end
+  
     def make_marker(user)
       Marker.new(user.latitude, 
                  user.longitude, 

@@ -4,6 +4,8 @@ ActionController::Routing::Routes.draw do |map|
   
   map.update_location 'users/:user_id/update_location', :controller => 'users', :action => 'update_location'
   
+  map.resources :friendships
+  
   map.nearby_list '/nearby/list', :controller => 'nearby', :action => 'list'
   map.nearby_map '/nearby/map', :controller => 'nearby', :action => 'map'
   
