@@ -1,14 +1,19 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :users, :has_many => [ :interests, :categories ]
-  map.signup "signup", :controller => "users", :action => "new"
-  map.user_interests_list 'users/:user_id/interests_list/', :controller => "users", :action => "interests"
-  
+  map.resources :users, :has_many => [:interests, :categories]
   map.resource :user_session
+  
+  map.update_location 'users/:user_id/update_location', :controller => 'users', :action => 'update_location'
+  
+  map.nearby_list '/nearby/list', :controller => 'nearby', :action => 'list'
+  map.nearby_map '/nearby/map', :controller => 'nearby', :action => 'map'
+  
+  map.welcome "welcome", :controller => "misc", :action => "welcome"
+  map.signup "signup", :controller => "users", :action => "new"
   map.login "login", :controller => "user_sessions", :action => "new"
   map.logout "logout", :controller => "user_sessions", :action => "destroy"
-  map.welcome "welcome", :controller => "misc", :action => "welcome"
   map.homepage "home", :controller => 'nearby', :action => 'list'
   
+  map.root :controller => "misc", :action => "index"
   map.placeholder "placeholder", :controller => "placeholder", :action => "index"
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -41,15 +46,8 @@ ActionController::Routing::Routes.draw do |map|
   #     # Directs /admin/products/* to Admin::ProductsController (app/controllers/admin/products_controller.rb)
   #     admin.resources :products
   #   end
-
-  # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
-  map.root :controller => "misc", :action => "index"
-
+  
   # See how all your routes lay out with "rake routes"
-  map.nearby_list '/nearby/list', :controller => 'nearby', :action => 'list'
-  map.nearby_map '/nearby/map', :controller => 'nearby', :action => 'map'
-
-  map.update_location 'users/:user_id/update_location', :controller => 'users', :action => 'update_location'
   
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
