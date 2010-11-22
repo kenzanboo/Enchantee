@@ -1,8 +1,4 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :interests, :has_many => :users, :has_one => :category
-
-  map.resources :categories, :has_many => [ :interests, :users]
-
   map.resources :users, :has_many => [ :interests, :categories ]
   map.signup "signup", :controller => "users", :action => "new"
   map.user_interests_list 'users/:user_id/interests_list/', :controller => "users", :action => "interests"
