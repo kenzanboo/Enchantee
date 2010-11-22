@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  
   before_filter :require_user, :only => [:edit, :edit_interests, :show, :show_interests]
   
   def update_location
@@ -39,7 +38,7 @@ class UsersController < ApplicationController
     @user = User.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html { render :layout => 'misc' } # new.html.erb
       format.xml  { render :xml => @user }
     end
   end
