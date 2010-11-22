@@ -25,17 +25,6 @@ class User < ActiveRecord::Base
     end
   end
   
-  def existing_interest_attributes=(interest_attributes)
-    interests.reject(&:new_record?).each do |interest|
-      attributes = interest_attributes[interest.id.to_s]
-      if attributes
-        interest.attributes = attributes
-      else
-        interests.delete(interest)
-      end
-    end
-  end
-  
   def save_interests
     interests.each do |interest|
       interest.save(false)
