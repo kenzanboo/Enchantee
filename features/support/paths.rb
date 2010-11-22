@@ -26,6 +26,10 @@ module NavigationHelpers
       login_path
     when /^(.*)'s update_location page$/
       "/users/#{User.find_by_username($1).id}/update_location"#edit_path(User.find_by_username($1))
+    when /^my profile$/
+      user_path(current_user)
+    when /^the show user page for ([^ ]+)$/
+      user_path(User.find_by_username($1))
     
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

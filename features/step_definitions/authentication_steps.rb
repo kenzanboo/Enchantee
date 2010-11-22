@@ -7,9 +7,7 @@ Given /^(?:|I )am logged in as (.+)$/ do |username|
 end
 
 Given /^there is a user with username "([^"]*)" and password "([^"]*)"$/ do |name, pass|
-  @user = User.create(:username => name,
-                      :password => pass, :password_confirmation => pass)
-  
+  @user = create_user(name, pass)
 end
 
 When /^I log in with username "([^"]*)" and password "([^"]*)"$/ do |name, pass|
