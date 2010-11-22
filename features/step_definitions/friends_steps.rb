@@ -1,4 +1,4 @@
-Given /^I have bookmarked ([^ ]+)$/ do |username|
-  friend = User.find_by_username(username)
-  current_user.friendships.build(:friend_id => friend.id)
+Given /^([^ ]+) has bookmarked ([^ ]+)$/ do |subject, direct_object|
+  user, friend = User.find_by_username(subject), User.find_by_username(direct_object)
+  user.friendships.build(:friend_id => friend.id)
 end

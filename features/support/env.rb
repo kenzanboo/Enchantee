@@ -12,7 +12,9 @@ def create_user(username, password)
                :password => password, 
                :password_confirmation => password, 
                :first_name => username, 
-               :last_name => username)
+               :last_name => username,
+               :latitude => 0.0,
+               :longitude => 0.0)
 end
  
 Spork.prefork do
