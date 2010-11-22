@@ -28,30 +28,8 @@
     <%= f.file_field :photo %>
   </p>
   <p>
-    <%= f.hidden_field :latitude %>
-  </p>
-  <p>
-    <%= f.hidden_field :longitude %>
-  </p>
-  <p>
     <%= f.submit 'Create' %>
   </p>
 <% end %>
-
-<script>
-if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(success);
-} else {
-  error('not supported');
-}
-
-function success(position) {
-  var latitude = position.coords.latitude;
-  var longitude = position.coords.longitude;
- // alert(latitude + ", " + longitude)
-  document.getElementById('user_latitude').value= latitude;
-  document.getElementById('user_longitude').value= longitude; 
-}
-</script>
 
 <%= link_to 'Back', users_path %>

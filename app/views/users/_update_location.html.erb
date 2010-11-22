@@ -1,0 +1,60 @@
+<javascript_include_tag 'prototype'>
+
+<form id="location" method="POST" action="/users/<%=h current_user.id %>">
+	
+	<p> 
+	  <input type="hidden" name="_method"  value="put" /> 
+	</p>
+	<p> 
+	  <input type="hidden" name="authenticity_token"  value="<%=h form_authenticity_token%>" /> 
+	</p>
+	
+	<p> 
+    <input type="hidden" id="user_latitude_partial" name="user[latitude]"/> 
+  </p> 
+  <p> 
+    <input type="hidden" id="user_longitude_partial" name="user[longitude]"/> 
+  </p>
+	<p> 
+	  <input type="hidden" name="commit"  value="Update" /> 
+	</p>
+
+</form>
+		
+<script>
+
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(success);
+} else {
+  error('not supported');
+}
+
+function success(position) {
+  var latitude = position.coords.latitude;
+  var longitude = position.coords.longitude;
+ // alert(latitude + ", " + longitude)
+  document.getElementById('user_latitude_partial').value= latitude;
+  document.getElementById('user_longitude_partial').value= longitude; 
+
+	$('location').request();
+	alert("Location has been Updated!");
+
+}
+/**
+//$('location').request();
+//setTimeout("send()", 100000);
+
+
+function send() {
+	alert(1);
+	$('location').request();
+}
+//Event.observe(window, "load", send());
+
+Event.observe('user_longitude_partial','change',send);
+**/
+</script>
+
+
+
+</ul>
