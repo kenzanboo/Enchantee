@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_filter :require_user, :only => [:edit, :edit_interests, :show, :show_interests]
+  before_filter :require_user, :except => :new
+  before_filter :require_no_user, :only => :new
   
   def update_location
     @user = User.all
@@ -10,6 +11,7 @@ class UsersController < ApplicationController
     end
   end
   
+  # TODO: PENDING REMOVAL
   # GET /users
   # GET /users.xml
   def index
