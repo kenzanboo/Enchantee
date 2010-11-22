@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_filter :require_user, :except => :new
   before_filter :require_no_user, :only => :new
   
+  
   def update_location
     @user = User.all
     
@@ -126,5 +127,10 @@ class UsersController < ApplicationController
         format.xml  { render :xml => @interest.errors, :status => :unprocessable_entity }
       end
     end
+  end
+  
+  def remove_interest
+    @user=User.find(params[:user_id])
+    @user.interests.delete(Interest.find(params[:id]))
   end
 end

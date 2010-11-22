@@ -1,3 +1,16 @@
+<% content_for :head do %>
+	<script type="text/javascript">
+		Event.observe(window, "load", function() {
+			$$(".interest").each(function(element) {
+				Event.observe(element, "click", function(event) {
+					element.hide()
+					return true
+				})
+			})
+		})
+	</script>
+<% end %>
+
 <h1>Editing user</h1>
 
 <% form_for(@user) do |f| %>

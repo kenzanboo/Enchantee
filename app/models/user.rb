@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
   
   def interest_attributes=(interest_attributes)
     interest_attributes.each do |attribute|
-      interests.build(attribute)
+      interests<<Interest.find_or_create_by_name(attribute)
     end
   end
   
