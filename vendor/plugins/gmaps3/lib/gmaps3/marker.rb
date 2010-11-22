@@ -9,13 +9,5 @@ module Gmaps3
       self.title = title
       self.contents = contents
     end
-    
-    def contents_string()
-      "'" + contents.gsub(/[']/, "\\\\'") + "'"
-    end
-    
-    def title_string()
-      "'" + title.gsub(/[']/, "\\\\'") + "'"
-    end
   end
 end

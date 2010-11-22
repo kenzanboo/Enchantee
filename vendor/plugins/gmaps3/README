@@ -8,24 +8,24 @@ Example
 =======
 
 Controller:
-	map = new GMap("my_map");
-	map.width = 400
-	map.height = 400
+	@map = new GMap("my_map");
+	@map.width = 400
+	@map.height = 400
 	
 	marker1 = new Marker(lat, long)
 	marker1.title = "Hello World"
 	marker1.contents = "<h1>Hello World!</h1>"
-	map.center = marker1
-	map.markers = [marker1]
+	@map.center = marker1
+	@map.markers = [marker1]
 
 View:
 	<html>
 		<head>
 			<%= GMap.api %>
-			<%= map.write %>
+			<%= @map.write %>
 		</head>
 		<body>
-			<%= map.div %>
+			<%= @map.div %>
 		</body>
 	</html>
 

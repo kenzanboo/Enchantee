@@ -63,10 +63,10 @@ module Gmaps3
         out << "  marker[#{index}] = new google.maps.Marker({\n"
         out << "    position: new google.maps.LatLng(#{marker.latitude},#{marker.longitude}),\n"
         out << "    map: #{var},\n"
-        out << "    title: #{marker.title_string},\n"
+        out << "    title: \"#{e marker.title}\",\n"
         out << "  });\n"
         if marker.contents
-          out << "  infowindow[#{index}] = new google.maps.InfoWindow({content:#{marker.contents_string}});\n"
+          out << "  infowindow[#{index}] = new google.maps.InfoWindow({content:\"#{e marker.contents}\"});\n"
           out << "  google.maps.event.addListener(marker[#{index}], 'click', function() {\n"
           out << "    infowindow.each(function(window) {window.close();});\n"
           out << "    infowindow[#{index}].open(#{var},marker[#{index}]);\n"
@@ -87,6 +87,19 @@ module Gmaps3
       attributes = "id=\"#{id}\""
       attributes << " class=\"#{options[:class]}\"" if options[:class]
       "<div #{attributes}></div>"
+    end
+    
+    private
+    JS_ESCAPE_MAP = {
+    '\\'    => '\\\\',
+    '</'    => '<\/',
+    "\r\n"  => '\n',
+    "\n"    => '\n',
+    "\r"    => '\n',
+    '"'     => '\\"',
+    "'"     => "\\'" }
+    def e(string)
+      string ? string.gsub(/(\\|<\/|\r\n|[\n\r"'])/) { JS_ESCAPE_MAP[$1] } : '';
     end
   end
 end
