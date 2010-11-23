@@ -10,48 +10,48 @@ describe FriendshipsController do
 
     describe "with valid params" do
       it "assigns a newly created friendship as @friendship" do
-        mock_blah = mock()
-        mock_blah.should_receive(:create).and_return(true)
+        mock_friendship = mock_friendship(:save => true)
+        mock_friendships = mock()
+        mock_friendships.should_receive(:build).and_return(mock_friendship)
         mock_user = mock_model(User)
-        mock_user.should_receive(:friendships).and_return(mock_blah)
-        FriendshipsController.stub(:current_user).and_return(mock_user)
-        #Friendship.stub(:new).with({'these' => 'params'}).and_return(mock_friendship(:save => true))
-        post :create, :friendship => {:these => 'params'}
+        mock_user.should_receive(:friendships).and_return(mock_friendships)
+        controller.stub(:current_user).and_return(mock_user)
+        post :create, :friend_id => 1
         assigns[:friendship].should equal(mock_friendship)
       end
 
       it "redirects to the friend's profile" do
-        mock_blah = mock()
-        mock_blah.should_receive(:create).and_return(true)
+        mock_friendship = mock_friendship(:save => true)
+        mock_friendships = mock()
+        mock_friendships.should_receive(:build).and_return(mock_friendship)
         mock_user = mock_model(User)
-        mock_user.should_receive(:friendships).and_return(mock_blah)
-        FriendshipsController.stub(:current_user).and_return(mock_user)
-        #Friendship.stub(:new).and_return(mock_friendship(:save => true))
-        post :create, :friendship => {:friend_id => 1}
+        mock_user.should_receive(:friendships).and_return(mock_friendships)
+        controller.stub(:current_user).and_return(mock_user)
+        post :create, :friend_id => 1
         response.should redirect_to(user_url(1))
       end
     end
 
     describe "with invalid params" do
       it "assigns a newly created but unsaved friendship as @friendship" do
-        mock_blah = mock()
-        mock_blah.should_receive(:create).and_return(false)
+        mock_friendship = mock_friendship(:save => true)
+        mock_friendships = mock()
+        mock_friendships.should_receive(:build).and_return(mock_friendship)
         mock_user = mock_model(User)
-        mock_user.should_receive(:friendships).and_return(mock_blah)
-        FriendshipsController.stub(:current_user).and_return(mock_user)
-        #Friendship.stub(:new).with({'these' => 'params'}).and_return(mock_friendship(:save => false))
-        post :create, :friendship => {:these => 'params'}
+        mock_user.should_receive(:friendships).and_return(mock_friendships)
+        controller.stub(:current_user).and_return(mock_user)
+        post :create, :friend_id => 1
         assigns[:friendship].should equal(mock_friendship)
       end
 
       it "redirects to the friend's profile" do
-        mock_blah = mock()
-        mock_blah.should_receive(:create).and_return(false)
+        mock_friendship = mock_friendship(:save => true)
+        mock_friendships = mock()
+        mock_friendships.should_receive(:build).and_return(mock_friendship)
         mock_user = mock_model(User)
-        mock_user.should_receive(:friendships).and_return(mock_blah)
-        FriendshipsController.stub(:current_user).and_return(mock_user)
-        #Friendship.stub(:new).and_return(mock_friendship(:save => false))
-        post :create, :friendship => {:friend_id => 1}
+        mock_user.should_receive(:friendships).and_return(mock_friendships)
+        controller.stub(:current_user).and_return(mock_user)
+        post :create, :friend_id => 1
         response.should redirect_to(user_url(1))
       end
     end
@@ -60,15 +60,20 @@ describe FriendshipsController do
 
   describe "DELETE destroy" do
     it "destroys the requested friendship" do
-      FriendshipsController.stub(:current_user).and_return(mock_model(User, :friendships => [mock_friendship(:id => 37)]))
-      #Friendship.should_receive(:find).with("37").and_return(mock_friendship)
-      mock_friendship.should_receive(:destroy)
+      mock_friendships = mock()
+      mock_friendships.should_receive(:find).and_return(mock_friendship(:id => 37, :destroy => true))
+      mock_user = mock_model(User)
+      mock_user.should_receive(:friendships).and_return(mock_friendships)
+      controller.stub(:current_user).and_return(mock_user)
       delete :destroy, :id => "37"
     end
 
     it "redirects to the user's profile" do
-      FriendshipsController.stub(:current_user).and_return(mock_model(User, :id => 100, :friendships => [mock_friendship(:id => 37)]))
-      #Friendship.stub(:find).and_return(mock_friendship(:destroy => true))
+      mock_friendships = mock()
+      mock_friendships.should_receive(:find).and_return(mock_friendship(:id => 37, :destroy => true))
+      mock_user = mock_model(User, :id => 100)
+      mock_user.should_receive(:friendships).and_return(mock_friendships)
+      controller.stub(:current_user).and_return(mock_user)
       delete :destroy, :id => "1"
       response.should redirect_to(user_url(100))
     end

@@ -26,7 +26,7 @@ class NearbyController < ApplicationController
   
   private
     def check_location()
-      raise "Error: User has no location" unless current_user and current_user.latitude and current_user.longitude
+      raise "Error: User has no location" unless current_user != nil and current_user.latitude != nil and current_user.longitude != nil
     end
   
     def make_marker(user)
