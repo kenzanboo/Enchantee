@@ -1,16 +1,6 @@
 class UsersController < ApplicationController
   before_filter :require_user, :except => [:new, :create]
   before_filter :require_no_user, :only => [:new, :create]
-  
-  
-  def update_location
-    @user = User.all
-    
-    respond_to do |format|
-      format.html # update_location.html.erb
-      format.xml  { render :xml => @users }
-    end
-  end
 
   # GET /users/1
   # GET /users/1.xml
