@@ -32,5 +32,5 @@ end
 
 
 Then /^I should be logged in$/ do
-  current_user
+  @current_user != nil
 end
