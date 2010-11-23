@@ -3,23 +3,20 @@ require 'spec_helper'
 describe UsersController do
 
   def mock_user(stubs={})
+    stubs[:interests] ||= []
     @mock_user ||= mock_model(User, stubs)
   end
   
   def mock_interest(stubs={})
     @mock_interest ||= mock_model(Interest, stubs)
   end
-
-  describe "GET index" do
-    it "assigns all users as @users" do
-      User.stub(:find).with(:all).and_return([mock_user])
-      get :index
-      assigns[:users].should == [mock_user]
-    end
+  
+  before(:each) do
   end
-
+  
   describe "GET show" do
     it "assigns the requested user as @user" do
+      controller.stub(:current_user).and_return(mock_model(User))
       User.stub(:find).with("37").and_return(mock_user)
       get :show, :id => "37"
       assigns[:user].should equal(mock_user)
@@ -36,6 +33,7 @@ describe UsersController do
 
   describe "GET edit" do
     it "assigns the requested user as @user" do
+      controller.stub(:current_user).and_return(mock_model(User))
       User.stub(:find).with("37").and_return(mock_user)
       get :edit, :id => "37"
       assigns[:user].should equal(mock_user)
@@ -75,6 +73,9 @@ describe UsersController do
   end
 
   describe "PUT update" do
+    before(:each) do
+      controller.stub(:current_user).and_return(mock_model(User))
+    end
 
     describe "with valid params" do
       it "updates the requested user" do
@@ -119,6 +120,10 @@ describe UsersController do
   end
 
   describe "DELETE destroy" do
+    before(:each) do
+      controller.stub(:current_user).and_return(mock_model(User))
+    end
+    
     it "destroys the requested user" do
       User.should_receive(:find).with("37").and_return(mock_user)
       mock_user.should_receive(:destroy)
@@ -133,10 +138,11 @@ describe UsersController do
   end
   
   describe "DELETE remove_interest" do
-    it "redirects to the user's interests list" do
-      User.stub(:find).and_return(mock_user(:remove_interest => true))
+    it "should remove the interest" do
+      controller.stub(:current_user).and_return(mock_model(User))
+      Interest.should_receive(:find).and_return(mock)
+      User.stub(:find).and_return(mock_model(User, :interests => mock(:delete => true)))
       delete :remove_interest, :id => "1"
-      response.should redirect_to(user_interests_url(@user))
     end
   end
 end

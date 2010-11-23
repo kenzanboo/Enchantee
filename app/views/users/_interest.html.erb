@@ -4,12 +4,12 @@
     <%= interest_form.error_messages %>
     
     <p>
-      <%=h interest_form.label :name %><br />
-      <%=h interest_form.text_field :name %>
+      <%=h interest_form.label(:name) %><br />
+      <%=h interest_form.text_field(:name) %>
     </p>
     <p>
-      <%=h interest_form.label :category_id %><br />
-      <%=h interest_form.collection_select :category_id, categories, :id, :name %>
+      <%=h interest_form.label(:category_id) %><br />
+      <%=h interest_form.collection_select(:category_id, categories, :id, :name) %>
     </p>
     <p>
       <%= link_to_function "Remove", "$(this).up('.interest').remove()" %>
