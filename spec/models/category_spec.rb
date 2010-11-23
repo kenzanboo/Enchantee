@@ -16,15 +16,15 @@ describe Category do
       @category = Category.create(@valid_attributes)
     end
     
-    it "should have an interests property" do
-      @category.respond_to?(:interests).should be_true
-    end
-    
     it "should update interest objects added to it" do
       interest = mock_model(Interest)
-      interest.should_receive(:[]=).with("category_id", 1)
+      interest.should_receive(:[]=).with("category_id", @category.id)
       interest.should_receive(:save).and_return(true)
       @category.interests << interest
+    end
+    
+    it "should have an interests property" do
+      @category.respond_to?(:interests).should be_true
     end
   end
 end

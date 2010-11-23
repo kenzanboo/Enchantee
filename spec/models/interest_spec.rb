@@ -2,10 +2,10 @@ require 'spec_helper'
 
 describe Interest do
   before(:each) do
-    Category.create!(:name => "value for name")
+    @category=Category.create!(:name => "value for name")
     @valid_attributes = {
       :name => "value for name",
-      :category_id => 1
+      :category_id => @category.id
     }
   end
 
