@@ -12,8 +12,8 @@ describe NearbyController do
   describe "list" do
     before(:each) do
       @zerozero = User.create(:username => "Test",
-                  :firstname => "Testing",
-                  :lastname => "Tester",
+                  :first_name => "Testing",
+                  :last_name => "Tester",
                   :password => "snufflepuss",
                   :password_confirmation => "snufflepuss",
                   :latitude => 0.0,
@@ -22,26 +22,26 @@ describe NearbyController do
     
     it "should display a nearby user" do
       current_user = User.create(:username => "Test2",
-                   :firstname => "Testing2",
-                   :lastname => "Tester2",
+                   :first_name => "Testing2",
+                   :last_name => "Tester2",
                    :password => "snufflepuss",
                    :password_confirmation => "snufflepuss",
                    :latitude => 0.001,
                    :longitude => 0.001)
-      NearbyController.stub(:current_user).and_return(current_user) #mock_model(User, :latitude => 0.001, :longitude => 0.001, :firstname => "Max", :lastname => "Johnson")
+      NearbyController.stub(:current_user).and_return(current_user) #mock_model(User, :latitude => 0.001, :longitude => 0.001, :first_name => "Max", :last_name => "Johnson")
       get :list
       assigns[:list].should contain(@zerozero)
     end
     
     it "should not display a distant user" do
       current_user = User.create(:username => "Test2",
-                   :firstname => "Testing2",
-                   :lastname => "Tester2",
+                   :first_name => "Testing2",
+                   :last_name => "Tester2",
                    :password => "snufflepuss",
                    :password_confirmation => "snufflepuss",
                    :latitude => 0.0,
                    :longitude => 180.0)
-      NearbyController.stub(:current_user).and_return(current_user) #mock_model(User, :latitude => 0.001, :longitude => 0.001, :firstname => "Max", :lastname => "Johnson")
+      NearbyController.stub(:current_user).and_return(current_user) #mock_model(User, :latitude => 0.001, :longitude => 0.001, :first_name => "Max", :last_name => "Johnson")
       get :list
       assigns[:list].should_not contain(@zerozero)
     end
@@ -50,8 +50,8 @@ describe NearbyController do
   describe "map" do
     before(:each) do
       @zerozero = User.create(:username => "Test",
-                  :firstname => "Testing",
-                  :lastname => "Tester",
+                  :first_name => "Testing",
+                  :last_name => "Tester",
                   :password => "snufflepuss",
                   :password_confirmation => "snufflepuss",
                   :latitude => 0.0,
@@ -60,13 +60,13 @@ describe NearbyController do
     
     it "should display a nearby user" do
       current_user = User.create(:username => "Test2",
-                   :firstname => "Testing2",
-                   :lastname => "Tester2",
+                   :first_name => "Testing2",
+                   :last_name => "Tester2",
                    :password => "snufflepuss",
                    :password_confirmation => "snufflepuss",
                    :latitude => 0.001,
                    :longitude => 0.001)
-      NearbyController.stub(:current_user).and_return(current_user) #mock_model(User, :latitude => 0.001, :longitude => 0.001, :firstname => "Max", :lastname => "Johnson")
+      NearbyController.stub(:current_user).and_return(current_user) #mock_model(User, :latitude => 0.001, :longitude => 0.001, :first_name => "Max", :last_name => "Johnson")
       get :map
       assigns[:map].markers[0].latitude.should == @zerozero.latitude
       assigns[:map].markers[0].longitude.should == @zerozero.longitude
@@ -75,13 +75,13 @@ describe NearbyController do
     
     it "should not display a distant user" do
       current_user = User.create(:username => "Test2",
-                   :firstname => "Testing2",
-                   :lastname => "Tester2",
+                   :first_name => "Testing2",
+                   :last_name => "Tester2",
                    :password => "snufflepuss",
                    :password_confirmation => "snufflepuss",
                    :latitude => 0.0,
                    :longitude => 180.0)
-      NearbyController.stub(:current_user).and_return(current_user) #mock_model(User, :latitude => 0.001, :longitude => 0.001, :firstname => "Max", :lastname => "Johnson")
+      NearbyController.stub(:current_user).and_return(current_user) #mock_model(User, :latitude => 0.001, :longitude => 0.001, :first_name => "Max", :last_name => "Johnson")
       get :map
       assigns[:map].markers.should be_empty
     end
