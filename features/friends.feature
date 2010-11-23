@@ -14,7 +14,7 @@ Feature: User Bookmarking
 	Scenario: Remove a user from bookmarks
 		Given I am logged in as bill
 		And there is a user with username "bob" and password "password"
-		And I have bookmarked bob
+		And bill has bookmarked bob
 		And I am on the show user page for bill
 		When I follow "Remove"
 		And I go to the show user page for bill
