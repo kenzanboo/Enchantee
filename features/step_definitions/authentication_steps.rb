@@ -10,6 +10,10 @@ Given /^there is a user with username "([^"]*)" and password "([^"]*)"$/ do |nam
   @user = create_user(name, pass)
 end
 
+Given /^I am not logged in$/ do
+  visit logout_path
+end
+
 When /^I log in with username "([^"]*)" and password "([^"]*)"$/ do |name, pass|
   visit login_path
   fill_in :username, :with => name
