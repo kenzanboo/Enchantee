@@ -24,6 +24,7 @@ When /^I log in with username "([^"]*)" and password "([^"]*)"$/ do |name, pass|
 end
 
 When /^I sign up with username "([^"]*)", password "([^"]*)", first name "([^"]*)", and last name "([^"]*)"$/ do |user, pass, first, last|
+  visit signup_path
   fill_in :username, :with => name
   fill_in :password, :with => pass
   fill_in "Password confirmation", :with => pass
