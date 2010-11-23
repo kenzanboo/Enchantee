@@ -27,7 +27,7 @@ When /^I sign up with username "([^"]*)", password "([^"]*)", first name "([^"]*
 end
 
 Then /^there should be a user with username "([^"]*)", password "([^"]*)", first name "([^"]*)", and last name "([^"]*)"$/ do |user, pass, first, last|
-  User.find_by_username_and_password_and_first_name_and_last_name(user, pass, first, last)
+  User.find_by_username_and_first_name_and_last_name(user, first, last)
 end
 
 
