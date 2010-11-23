@@ -4,7 +4,7 @@ Feature: Manage Info
 	
 	Scenario: Edit Name
 		Given I am logged in as bob
-		And I am on bob's edit info page
+		And I am on bob's edit page
 		And the field "Name" contains the text "Bob"
 		When I enter "Billy Bob" into the "Name" field
 		And I submit the form
