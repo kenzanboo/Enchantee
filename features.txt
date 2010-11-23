@@ -1,0 +1,4 @@
+friends.feature
+view_nearby.feature
+manage_info.feature (includes javascript for interest, thus few scenarios)
+background updating of location (all javascript thus NO scenarios)
