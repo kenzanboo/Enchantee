@@ -20,6 +20,9 @@
 	</p>
 
 </form>
+<span id="location_alert">
+	
+</span>
 		
 <script>
 
@@ -35,14 +38,14 @@ function success(position) {
  // alert(latitude + ", " + longitude)
   document.getElementById('user_latitude_partial').value= latitude;
   document.getElementById('user_longitude_partial').value= longitude; 
-
 	$('location').request();
-	alert("Location has been Updated!");
-
+	document.getElementById('location_alert').textContent = "Your Location has been Updated.";
+	
 }
 /**
 //$('location').request();
 //setTimeout("send()", 100000);
+//alert("Location has been Updated!");
 
 
 function send() {
