@@ -1,0 +1,3 @@
+I was impressed by the Whiteboard service (http://white-board.heroku.com/), and I wanted to see how the whiteboards are stored in the database. Upon inspecting the models, views, and the schema, I discovered that every mouse stroke on the whiteboard creates a string of data that is sent back to the webserver. The data is then written into a new row in the layers table. I like the simplicity of this approach, but it certainly is not scalable. With a moderate amount of traffic, this design will hammer the database with writes.
+
+Nonetheless, the site layout is great and the design is clean!
