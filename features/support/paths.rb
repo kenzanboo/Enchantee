@@ -10,12 +10,8 @@ module NavigationHelpers
 
     when /the home\s?page/
       '/'
-    when /^(.*)'s edit interests page$/
-      "/users/#{User.find_by_username($1).id}/interests/edit"#edit_path(User.find_by_username($1))
-    when /^(.*)'s add interest page$/
-      "/users/#{User.find_by_username($1).id}/interests/new"#add_interest_user_path(User.find_by_username($1))
-    when /^(.*)'s show interests page$/
-      "/users/#{User.find_by_username($1).id}/interests"#show_interests_user_path(User.find_by_username($1))
+    when /^(.*)'s edit page$/
+      "/users/#{User.find_by_username($1).id}/edit"
     when /^the signup page$/
       signup_path
     when /^the nearby users list$/
