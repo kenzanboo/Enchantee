@@ -8,11 +8,6 @@
 </p>
 
 <p>
-  <b>Password:</b>
-  <%=h @user.password %>
-</p>
-
-<p>
   <b>First name:</b>
   <%=h @user.first_name %>
 </p>
@@ -37,7 +32,7 @@
   <%=h @user.longitude %>
 </p>
 
-<h>Interests:</h>
+<h2>Interests</h2>
 <table>
   <tr>
 	<th>Name</th>
@@ -63,6 +58,3 @@
   <% end %>
   </ul>
 </p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
