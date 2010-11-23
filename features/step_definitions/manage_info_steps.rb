@@ -16,3 +16,8 @@ Then /^(?:|I )should not have an interest "([^"]*)"$/ do |interest|
   #pending #check if user has the correct interest
   @user.interests.should_not include(interest)
 end
+
+Then /^(?:|I )should have the name "([^"]*)"$/ do |name|
+  
+  User.find(@user.id).first_name.should == name
+end
