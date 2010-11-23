@@ -8,8 +8,12 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
 
-    when /the home\s?page/
+    when /^the root page$/
       '/'
+    when /^the welcome page$/
+      '/welcome'
+    when /^the home\s?page$/
+      '/home'
     when /^(.*)'s edit page$/
       "/users/#{User.find_by_username($1).id}/edit"
     when /^the signup page$/
