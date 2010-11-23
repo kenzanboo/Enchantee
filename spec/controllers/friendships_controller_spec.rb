@@ -15,10 +15,10 @@ describe FriendshipsController do
         assigns[:friendship].should equal(mock_friendship)
       end
 
-      it "redirects to the created friendship" do
+      it "redirects to the friend's profile" do
         Friendship.stub(:new).and_return(mock_friendship(:save => true))
-        post :create, :friendship => {}
-        response.should redirect_to(friendship_url(mock_friendship))
+        post :create, :friendship => {:friend_id => 1}
+        response.should redirect_to(user_url(1))
       end
     end
 
@@ -29,10 +29,10 @@ describe FriendshipsController do
         assigns[:friendship].should equal(mock_friendship)
       end
 
-      it "re-renders the 'new' template" do
+      it "redirects to the friend's profile" do
         Friendship.stub(:new).and_return(mock_friendship(:save => false))
-        post :create, :friendship => {}
-        response.should render_template('new')
+        post :create, :friendship => {:friend_id => 1}
+        response.should redirect_to(user_url(1))
       end
     end
 
@@ -45,10 +45,11 @@ describe FriendshipsController do
       delete :destroy, :id => "37"
     end
 
-    it "redirects to the friendships list" do
+    it "redirects to the user's profile" do
+      FriendshipsController.stub(:current_user).and_return(mock_model(User, :id => 100))
       Friendship.stub(:find).and_return(mock_friendship(:destroy => true))
       delete :destroy, :id => "1"
-      response.should redirect_to(friendships_url)
+      response.should redirect_to(user_url(100))
     end
   end
 
