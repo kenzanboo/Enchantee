@@ -15,6 +15,7 @@ describe "/users/edit.html.erb" do
   end
 
   it "renders the edit user form" do
+    @user.stub(:interests).and_return([])
     render
 
     response.should have_tag("form[action=#{user_path(@user)}][method=post]") do
