@@ -132,44 +132,6 @@ describe UsersController do
     end
   end
   
-  describe "GET interests" do
-    it "assigns all users as @users" do
-      User.stub(:find).with(:all).and_return([mock_user])
-      get :interests
-      assigns[:users].should == [mock_user]
-    end
-  end
-  
-  describe "GET edit_interests" do
-    it "assigns the requested interest as @interest" do
-      Interest.stub(:find).with("37").and_return(mock_interest)
-      get :edit_interests, :id => "37"
-      assigns[:interest].should equal(mock_interest)
-    end
-    
-    it "assigns the requested user as @user" do
-      User.stub(:find).with("37").and_return(mock_user)
-      get :edit_interests, :id => "37"
-      assigns[:user].should equal(mock_user)
-    end
-  end
-  
-  describe "GET add_interest" do
-    it "assigns the requested user as @user" do
-      User.stub(:find).with("37").and_return(mock_user)
-      get :add_interests, :id => "37"
-      assigns[:user].should equal(mock_user)
-    end
-  end
-  
-  describe "POST create_interest" do
-    it "assigns the requested user as @user" do
-      User.stub(:find).with("37").and_return(mock_user)
-      post :create_interest, :id => "37"
-      assigns[:user].should equal(mock_user)
-    end
-  end
-  
   describe "DELETE remove_interest" do
     it "redirects to the user's interests list" do
       User.stub(:find).and_return(mock_user(:remove_interest => true))
