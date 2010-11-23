@@ -1,9 +1,9 @@
 <% content_for :head do %>
 	<script type="text/javascript">
 		Event.observe(window, "load", function() {
-			$$(".interest").each(function(element) {
+			$$(".remove_button").each(function(element) {
 				Event.observe(element, "click", function(event) {
-					element.hide()
+					element.up('.interest').hide()
 					return true
 				})
 			})

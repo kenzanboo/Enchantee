@@ -7,5 +7,5 @@
       <label>Category</label>
       <%=h interest.category.name %>
     </p>
-	<%= link_to_remote "Remove", :url => {:action => :remove_interest, :controller => "users", :id => interest.id, :location => "", :user_id => 		@user.id}, :update => interest.id.to_s %>
+	<span class="remove_button"><%= link_to_remote "Remove", :url => {:action => :remove_interest, :controller => "users", :id => interest.id, :location => "", :user_id => 		@user.id}, :update => interest.id.to_s %></span>
 </div>
