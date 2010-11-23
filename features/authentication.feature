@@ -10,9 +10,13 @@ Feature: Authentication
 		Then I should be logged in
 	
 	Scenario: Unsuccessful Login
+		Given I am on the login page
+		When I log in with username "invalidUserName3837263" and password "invalidPassword3453425"
+		Then I should be on the user_session page
+
 	
 	Scenario: Sign Up
-		Given I am not logged in
+		Given I am logged out
 		And I am on the signup page	
 		When I sign up with username "bob", password "password", first name "Billy", and last name "Bob"
 		Then there should be a user with username "bob", password "password", first name "Billy", and last name "Bob"

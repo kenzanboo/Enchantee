@@ -20,6 +20,8 @@ module NavigationHelpers
       nearby_map_path
     when /^the login page$/
       login_path
+    when /^the user_session page$/
+      user_session_path  
     when /^(.*)'s update_location page$/
       "/users/#{User.find_by_username($1).id}/update_location"#edit_path(User.find_by_username($1))
     when /^the show user page for ([^ ]+)$/

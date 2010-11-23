@@ -6,11 +6,13 @@ Given /^(?:|I )am logged in as (.+)$/ do |username|
   click_button "Login"
 end
 
+
+
 Given /^there is a user with username "([^"]*)" and password "([^"]*)"$/ do |name, pass|
   @user = create_user(name, pass)
 end
 
-Given /^I am not logged in$/ do
+Given /^I am logged out$/ do
   visit logout_path
 end
 
