@@ -14,21 +14,16 @@ a:hover {
     text-decoration: underline;
 }
 
+hr {
+	height: 1px;
+	border: 0px;
+	background-color: lightgray;
+}
+
 ul {
     list-style-type: none;
     margin: 1px;
     border: none;
-}
-
-h1 {
-    float: left;
-    color: white;
-/*    background-color: red;*/
-}
-
-h3 {
-    color: gray;
-    padding: 6px;
 }
 
 img {
@@ -46,36 +41,20 @@ img {
     display: inline;
     white-space: nowrap;
     margin: 10px;
-/*    background-color: green;*/
+    background-color: gray;
 }
-
-.profilePicture {
-    width: 80px;
-    height: 100px;
-}
-
-.adImage {
-    width: 180px;
-}
-
-.userName {
-    font-weight: bold;
-}
-
-.timeDeltaText {
-    color: gray;
-}
-
 
 /* -------------------------------------------------------------------------- */
 
 #container {
     width: 640px;
+		margin-left: auto;
+		margin-right: auto;
 }
 
 #headerPanel {
-    background-color: #3B5998;
-}
+/*    background-color: #3B5998;
+*/}
 
 #headerPanelLinkBox {
 /*    clear: both;*/
@@ -85,39 +64,7 @@ img {
 .headerPanelLink, .headerPanelLink {
     color: white;
     font-weight: bold;
-    font-size: 1.4em;
-}
-
-/* -------------------------------------------------------------------------- */
-
-#leftPanel {
-    float: left;
-    width: 200px;
-    border-style: solid;
-    border-width: 1px;
-/*    background-color: #9453AD;*/
-}
-
-#leftPanelProfileBox {
-    width: 200px;
-/*    background-color: #FF0040;*/
-}
-
-#leftPanelProfileBoxPhoto {
-    float: left;
-}
-
-#leftPanelProfileBoxName {
-
-}
-
-#leftPanelNavigationBox {
-    clear: both;
-/*    background-color: #CC0033;*/
-}
-
-.navigation {
-    padding: 4px;
+    font-size: 2em;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -127,63 +74,3 @@ img {
 /*    width: 600px;*/
 /*    background-color: #C26E00;*/
 }
-
-#statusField {
-    width: 540px;
-    margin-bottom: 10px;
-}
-
-.newsItem {
-/*    background-color: #FFFA66;*/
-/*    padding-bottom: 1em;*/
-    overflow: auto;
-}
-
-.newsItemPhoto {
-    float: left;
-}
-
-.newsrtemContent {
-}
-
-.newsItemLinkBox {
-    margin-top: 1em;
-}
-
-.mediaBox {
-/*    background-color: #FFFA66;*/
-}
-
-.mediaBoxPhoto {
-    float: left;
-}
-
-.mediaBoxContent {
-
-}
-
-.mediaImage {
-    width: 120px;
-    height: 90px;
-}
-
-.mediaTitle {
-    font-weight: bold;
-}
-
-.mediaLink {
-
-}
-
-
-
-/* -------------------------------------------------------------------------- */
-
-#rightPanel {
-    float: right;
-    width: 200px;
-    border-style: solid;
-    border-width: 1px;
-/*    background-color: #005A87;*/
-}
-
