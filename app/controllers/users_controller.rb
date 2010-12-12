@@ -104,4 +104,15 @@ class UsersController < ApplicationController
     @user=User.find(params[:user_id])
     @user.interests.delete(Interest.find(params[:id]))
   end
+  
+  def current_interest
+    puts params[:category_id]
+    int=Interest.find_or_create_by_name(params[:interest])
+    if not current_user.interests.find(int.id)
+      current_user.interests<<int
+    end
+    current_user.current_interest_id=int.id
+    current_user.save
+    render :partial => 'show_interest', locals=>{:interest=>int}
+  end
 end
