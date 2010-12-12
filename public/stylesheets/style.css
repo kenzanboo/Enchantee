@@ -98,6 +98,36 @@ h1 {
 #headerPanelLinkBox a:active {
     border-color: red;
 }
+/* -------------------------------------------------------------------------- */
+
+.editForm {
+    
+}
+
+.editFormEntry {
+    padding: 0px;
+    margin: 0px;
+    
+    width: 340px;
+    height: 32px;
+    margin: 4px;
+}
+
+.editFormEntry label {
+    padding: 0px;
+    margin: 0px;
+    
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.editFormEntry input {
+    float: right;
+    width: 200px;
+    height: 20px;
+    
+    font-size: 1em;
+}
 
 /* -------------------------------------------------------------------------- */
 

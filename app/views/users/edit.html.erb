@@ -11,43 +11,47 @@
 	</script>
 <% end %>
 
-<h1>Editing user</h1>
+<h1>Edit Your Profile</h1>
 
+<div class="editForm">
 <% form_for(@user) do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :username %><br />
+  <div class="editFormEntry">
+    <%= f.label :username %>
     <%= f.text_field :username %>
-  </p>
-  <p>
-    <%= f.label :password %><br />
+  </div>
+  
+  <div class="editFormEntry">
+    <%= f.label :password %>
     <%= f.password_field :password %>
-  </p>
-  <p>
-    <%= f.label :password_confirmation %><br />
+  </div>
+  
+  <div class="editFormEntry">
+    <%= f.label :password_confirmation, "Confirmation" %>
     <%= f.password_field :password_confirmation %>
-  </p>
-  <p>
-    <%= f.label :first_name %><br />
+  </div>
+  
+  <div class="editFormEntry">
+    <%= f.label :first_name, "First Name" %>
     <%= f.text_field :first_name %>
-  </p>
-  <p>
-    <%= f.label :last_name %><br />
+  </div>
+  
+  <div class="editFormEntry">
+    <%= f.label :last_name, "Last Name" %>
     <%= f.text_field :last_name %>
-  </p>
-  <p>
-    <%= f.label :photo %><br />
+  </div>
+  
+  <div class="editFormEntry">
+    <%= f.label :photo %>
     <%= f.file_field :photo %>
-  </p>
+  </div>
+  
 	<div id="interests">
 		<%= render :partial => 'edit_interest_read_only', :collection => @user.interests, :as => :interest %>
 	</div>
 	<%= add_interest_link "Add Interest" %>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
+	
+  <%= f.submit 'Update' %>
 <% end %>
-
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+</div>

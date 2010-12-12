@@ -1,38 +1,11 @@
 <% if not current_user.friends.include? @user and current_user != @user %>
 <p>
-  <%= link_to "Bookmark User", friendships_path(:friend_id => @user), :method => :post %>
+  
 </p>
 <% end %>
 
-<p>
-  <b>Username:</b>
-  <%=h @user.username %>
-</p>
+<h1><%= h @user.name %> (<%= link_to "Bookmark", friendships_path(:friend_id => @user), :method => :post %>)</h1>
 
-<p>
-  <b>First name:</b>
-  <%=h @user.first_name %>
-</p>
-
-<p>
-  <b>Last name:</b>
-  <%=h @user.last_name %>
-</p>
-
-<p>
-  <b>Photo:</b>
-  <%=h @user.photo %>
-</p>
-
-<p>
-  <b>Latitude:</b>
-  <%=h @user.latitude %>
-</p>
-
-<p>
-  <b>Longitude:</b>
-  <%=h @user.longitude %>
-</p>
 
 <h2>Interests</h2>
 <table>

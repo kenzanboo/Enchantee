@@ -1,14 +1,21 @@
+<div class="editForm">
 <% form_for @user_session, :url => user_session_path do |f| %>
   <%= f.error_messages %>
-  <%= f.label :username %><br />
-  <%= f.text_field :username %><br />
-  <br />
-  <%= f.label :password %><br />
-  <%= f.password_field :password %><br />
-  <br />
+  
+  <div class="editFormEntry">
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </div>
+  
+  <div class="editFormEntry">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  
   <!--
-  <%= f.check_box :remember_me %><%= f.label :remember_me %><br />
-  <br />
+  <%= f.check_box :remember_me %><%= f.label :remember_me %>
   -->
+  
   <%= f.submit "Login" %>
 <% end %>
+</div>
