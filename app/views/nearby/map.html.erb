@@ -1,6 +1,6 @@
 <% content_for :head do %>
   <%= GMap.api %>
-  <% @map.width, @map.height = 600, 600 %>
+  <% @map.width, @map.height = "100%", 640 %>
   <%= @map.write %>
 <% end %>
 
