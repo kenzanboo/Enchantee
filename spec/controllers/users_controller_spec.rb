@@ -14,6 +14,28 @@ describe UsersController do
   before(:each) do
   end
   
+  describe "post set_longitude" do
+    it "should update the longitude" do
+      mock_user.should_receive(:longitude=).with(11.0)
+      mock_user.should_receive(:save).and_return true
+      controller.stub(:current_user).and_return(mock_user)
+      
+      post :set_longitude, :longitude => 11.0
+    end
+  end
+  
+  describe "post set_latitude" do
+    it "should update the latitude" do
+      mock_user.should_receive(:latitude=).with(10.0)
+      mock_user.should_receive(:save).and_return true
+      controller.stub(:current_user).and_return(mock_user)
+      
+      post :set_latitude, :latitude => 10.0
+    end
+  end
+      
+  
+  
   describe "GET show" do
     it "assigns the requested user as @user" do
       controller.stub(:current_user).and_return(mock_model(User))

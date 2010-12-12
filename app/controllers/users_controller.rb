@@ -2,6 +2,30 @@ class UsersController < ApplicationController
   before_filter :require_user, :except => [:new, :create]
   before_filter :require_no_user, :only => [:new, :create]
 
+
+  def set_latitude
+    if params[:latitude]
+      latitude = params[:latitude]
+      #longitude = params[:location][:longitude]
+      
+      current_user.latitude = latitude
+      #current_user.longitude = longitude
+      
+      current_user.save
+    end
+    
+  end
+  
+  def set_longitude
+    if params[:longitude]
+      longitude = params[:longitude]
+      current_user.longitude = longitude      
+      current_user.save
+    end
+    
+  end
+  
+  
   # GET /users/1
   # GET /users/1.xml
   def show
