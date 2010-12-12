@@ -6,9 +6,10 @@
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <%= javascript_include_tag :defaults %>
   <title>Enchantée</title>
-  <%= stylesheet_link_tag 'scaffold' %>
+  <%= stylesheet_link_tag 'style' %>
 </head>
 <body>
+<div id="container">
 
 <%= render "layouts/misc_header" %>
 
@@ -16,5 +17,6 @@
 
 <%= yield %>
 
+</div> <!-- container -->
 </body>
 </html>

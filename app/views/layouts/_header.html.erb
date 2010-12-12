@@ -1,20 +1,11 @@
 <div id="headerPanel">
   <%= link_to image_tag("rails.png"), root_path %>
   <div id="headerPanelLinkBox">
-    <%= link_to 'Home', root_path %> |
-    <%= link_to 'Map', nearby_map_path %> |
-    <%= link_to 'Profile', user_path(current_user.id) %> |
-    <%= link_to 'Edit Profile', edit_user_path(current_user.id) %> |
-    <%= link_to 'Logout', logout_path %>
-    
-    <!--
-      <ul class="unorderedListHorizontal">
-          <li class="unorderedListHorizontal"><a class="headerPanelLink" href="">Home</a></li>
-          <li class="unorderedListHorizontal"><a class="headerPanelLink" href="">Profile</a></li>
-          <li class="unorderedListHorizontal"><a class="headerPanelLink" href="">Edit Profile</a></li>
-          <li class="unorderedListHorizontal"><a class="headerPanelLink" href="">Logout</a></li>
-      </ul>
-    -->
+    <li class="unorderedListHorizontal"><%= link_to 'Home', root_path %></li>
+    <li class="unorderedListHorizontal"><%= link_to 'Map', nearby_map_path %></li>
+    <li class="unorderedListHorizontal"><%= link_to 'Profile', user_path(current_user.id) %></li>
+    <li class="unorderedListHorizontal"><%= link_to 'Edit Profile', edit_user_path(current_user.id) %></li>
+    <li class="unorderedListHorizontal"><%= link_to 'Logout', logout_path %></li>
   </div> <!-- headerPanelLinkBox -->
 </div> <!-- headerPanel -->
 <hr />
