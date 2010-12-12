@@ -1,3 +1,12 @@
-<% link_to user_path(user) do %>
-	<h3><%= user.name %></h3>
-<% end %>
+<span class="interest">
+	<%= image_tag("rails.png") %>
+	<% link_to(user_path(user)) do %>
+		<%=h user.name %>
+	<%end%>
+	(<%= number_with_precision user.distance, :precision => 2 %> mi)
+	<ul>
+		<% user.interests.first(4).each do |interest| %>
+			<li><%=h interest.name%></li>
+		<%end%>
+	</ul>
+</span>

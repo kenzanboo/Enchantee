@@ -85,3 +85,5 @@ names_list_univ_2.each do |name|
   testuser=User.create(:username=>name, :first_name=> name.split.first, :last_name=> name.split.last, :password=>"fuckyocouch", :password_confirmation=>"fuckyocouch", :latitude=>latitude, :longitude=>longitude);
   testuser.interests<<movie_interests;
 end
+
+User.find_by_username("Bill O'Reilly").interests<<Interest.create(:name=>"Doing it live!!!!!", :category_id=>6)

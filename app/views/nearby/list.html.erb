@@ -2,6 +2,8 @@
 <h1>Nearby Users</h1>
 <ul>
 	<% @users.each do |user| %>
-		<li><%=h user.name %> (<%= number_with_precision user.distance, :precision => 2 %> mi) - <% link_to user_path(user) do %> View Profile <% end %></li>
+		<li>
+			<%= render :partial=>'user_short', :locals=>{:user=>user} %>
+		</li>
 	<% end %>
 </ul>
