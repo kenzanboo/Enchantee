@@ -31,59 +31,60 @@ movie_interests=movies_list.map do |interest|
 end
 
 names_list_soda_1.each do |name|
-  latitude= 37.875582 + (rand()-0.5)/10000
-  longitude= -122.25856 + (rand()-0.5)/10000
+  latitude= 37.875582 + (rand()-0.5)/1000
+  longitude= -122.25856 + (rand()-0.5)/1000
   testuser=User.create(:username=>name, :first_name=> name.split.first, :last_name=> name.split.last, :password=>"fuckyocouch", :password_confirmation=>"fuckyocouch", :latitude=>latitude, :longitude=>longitude);
   testuser.interests<<music_interests;
 end
 
 names_list_soda_2.each do |name|
-  latitude= 37.875582 + (rand()-0.5)/10000
-  longitude= -122.258024 + (rand()-0.5)/10000
+  latitude= 37.875582 + (rand()-0.5)/1000
+  longitude= -122.258024 + (rand()-0.5)/1000
   testuser=User.create(:username=>name, :first_name=> name.split.first, :last_name=> name.split.last, :password=>"fuckyocouch", :password_confirmation=>"fuckyocouch", :latitude=>latitude, :longitude=>longitude);
   testuser.interests<<movie_interests;
 end
 
 names_list_gspp_1.each do |name|
-  latitude= 37.875669 + (rand()-0.5)/10000
-  longitude= -122.258024 + (rand()-0.5)/10000
+  latitude= 37.875669 + (rand()-0.5)/1000
+  longitude= -122.258024 + (rand()-0.5)/1000
   testuser=User.create(:username=>name, :first_name=> name.split.first, :last_name=> name.split.last, :password=>"fuckyocouch", :password_confirmation=>"fuckyocouch", :latitude=>latitude, :longitude=>longitude);
   testuser.interests<<music_interests;
 end
 
 names_list_gspp_2.each do |name|
-  latitude= 37.875669 + (rand()-0.5)/10000
-  longitude= -122.258466 + (rand()-0.5)/10000
+  latitude= 37.875669 + (rand()-0.5)/1000
+  longitude= -122.258466 + (rand()-0.5)/1000
   testuser=User.create(:username=>name, :first_name=> name.split.first, :last_name=> name.split.last, :password=>"fuckyocouch", :password_confirmation=>"fuckyocouch", :latitude=>latitude, :longitude=>longitude);
   testuser.interests<<movie_interests;
+  if(testuser.first_name=="Bill")
+    testuser.interests<<Interest.create(:name=>"Doing it live!!!!!", :category_id=>6)
+  end
 end
 
 names_list_th_1.each do |name|
-  latitude= 37.877038 + (rand()-0.5)/10000
-  longitude= -122.258466 + (rand()-0.5)/10000
+  latitude= 37.877038 + (rand()-0.5)/1000
+  longitude= -122.258466 + (rand()-0.5)/1000
   testuser=User.create(:username=>name, :first_name=> name.split.first, :last_name=> name.split.last, :password=>"fuckyocouch", :password_confirmation=>"fuckyocouch", :latitude=>latitude, :longitude=>longitude);
   testuser.interests<<music_interests;
 end
 
 names_list_th_2.each do |name|
-  latitude= 37.877038 + (rand()-0.5)/10000
-  longitude= -122.258466 + (rand()-0.5)/10000
+  latitude= 37.877038 + (rand()-0.5)/1000
+  longitude= -122.258466 + (rand()-0.5)/1000
   testuser=User.create(:username=>name, :first_name=> name.split.first, :last_name=> name.split.last, :password=>"fuckyocouch", :password_confirmation=>"fuckyocouch", :latitude=>latitude, :longitude=>longitude);
   testuser.interests<<movie_interests;
 end
 
 names_list_univ_1.each do |name|
-  latitude= 37.87155 + (rand()-0.5)/10000
-  longitude= -122.27295 + (rand()-0.5)/10000
+  latitude= 37.87155 + (rand()-0.5)/1000
+  longitude= -122.27295 + (rand()-0.5)/1000
   testuser=User.create(:username=>name, :first_name=> name.split.first, :last_name=> name.split.last, :password=>"fuckyocouch", :password_confirmation=>"fuckyocouch", :latitude=>latitude, :longitude=>longitude);
   testuser.interests<<music_interests;
 end
 
 names_list_univ_2.each do |name|
-  latitude= 37.87155 + (rand()-0.5)/10000
-  longitude= -122.27295 + (rand()-0.5)/10000
+  latitude= ( 37.87155 + (rand() - 0.5)/1000 )
+  longitude= ( -122.27295 + (rand() - 0.5)/1000 )
   testuser=User.create(:username=>name, :first_name=> name.split.first, :last_name=> name.split.last, :password=>"fuckyocouch", :password_confirmation=>"fuckyocouch", :latitude=>latitude, :longitude=>longitude);
   testuser.interests<<movie_interests;
 end
-
-User.find_by_username("Bill O'Reilly").interests<<Interest.create(:name=>"Doing it live!!!!!", :category_id=>6)
