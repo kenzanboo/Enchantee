@@ -1,14 +1,12 @@
 <javascript_include_tag 'prototype'>
 
-<span id="location_alert">
-
+<img id="spinner" src="/images/ajax-loader.gif">
 
 <script>
-
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(success);
 } else {
-  error('not supported');
+  error('Location retrieval not supported');
 }
 
 function success(position) {
@@ -26,17 +24,6 @@ function success(position) {
 		parameters: { longitude: longitude}, 
 	});
  
-	document.getElementById('location_alert').textContent = "Your Location has been Updated.";
-	
+	document.getElementById('spinner').src = "/images/located.png";
 }
-
-
-
-
-
 </script>
-
-
-
-
-</ul>
