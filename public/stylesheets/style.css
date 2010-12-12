@@ -1,29 +1,26 @@
-/*  vim:set ts=8 sw=4 sts=4 et: */
-
 body {
-    font-family: "Helvetica", sans-serif;
-    font-size: 0.8em;
+    font-family: helvetica, sans-serif;
+    font-size: 18px;
 }
 
 a:link, a:visited {
-    color: blue;
-    text-decoration: none;
+    color: #8405FD;
+    text-decoration: underline;
 }
 
 a:hover {
-    text-decoration: underline;
+    text-decoration: none;
+}
+
+a:active {
+    color: red;
+    text-decoration: none;
 }
 
 hr {
 	height: 1px;
 	border: 0px;
-	background-color: lightgray;
-}
-
-ul {
-    list-style-type: none;
-    margin: 1px;
-    border: none;
+	background-color: gray;
 }
 
 img {
@@ -31,17 +28,8 @@ img {
     border: none;
 }
 
-/* -------------------------------------------------------------------------- */
-
-.clear {
-    clear: both;
-}
-
-.unorderedListHorizontal {
-    display: inline;
-    white-space: nowrap;
-    margin: 10px;
-    background-color: gray;
+h1 {
+    font-size: 1.3em;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -52,25 +40,67 @@ img {
 		margin-right: auto;
 }
 
+/* -------------------------------------------------------------------------- */
+
 #headerPanel {
-/*    background-color: #3B5998;
-*/}
+    
+}
 
 #headerPanelLinkBox {
 /*    clear: both;*/
     float: right;
 }
 
-.headerPanelLink, .headerPanelLink {
-    color: white;
+#headerPanelLinkBox ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    overflow: hidden;
+}
+
+#headerPanelLinkBox li {
+    display: inline;
+    float: left;
+    /*white-space: nowrap;*/
+    padding: 0px;
+    margin: 0px;
+}
+
+#headerPanelLinkBox a:link, a:visited {
+    display: block;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    width: 80px;
+    height: 32px;
+    
+    /*padding-top: 8px;*/
+    
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+    color: black;
     font-weight: bold;
-    font-size: 2em;
+    text-align: center;
+    font-size: 1.2em;
+    
+    background-color: white;
+    text-decoration: none;
+}
+
+#headerPanelLinkBox a:hover {
+    color: gray;
+    border-color: gray;
+}
+
+#headerPanelLinkBox a:active {
+    border-color: red;
 }
 
 /* -------------------------------------------------------------------------- */
 
-#centerPanel {
-/*    float: center;*/
-/*    width: 600px;*/
-/*    background-color: #C26E00;*/
+.clear {
+    clear: both;
 }
