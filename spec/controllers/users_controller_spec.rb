@@ -43,6 +43,10 @@ describe UsersController do
       get :show, :id => "37"
       assigns[:user].should equal(mock_user)
     end
+    
+    it "should show a nearby user"
+    it "should show a bookmarked user"
+    it "shouldn't show a user who is neither nearby nor bookmarked"
   end
 
   describe "GET new" do

@@ -23,6 +23,43 @@ describe User do
     @user.should_receive(:name).and_return("value for first_name value for last_name")
     @user.name
   end
+  
+  describe "interests_in_common_with" do
+    before(:each) do
+      @interest1 = mock_model(Interest)
+      @interest2 = mock_model(Interest)
+      @interest3 = mock_model(Interest)
+      @interest4 = mock_model(Interest)
+      @user = mock_model(User, :interests => [@interest1, @interest2, @interest3])
+    end
+    
+    it "should return 2 when two features are the same" do
+      user = User.new(@valid_attributes)
+      user.stub(:interests).and_return([@interest1, @interest2, @interest4])
+      user.interests_in_common_with(@user).should == 2
+    end
+    
+    it "should return 0 when features are disjoint" do
+      user = User.new(@valid_attributes)
+      user.stub(:interests).and_return([@interest4])
+      user.interests_in_common_with(@user).should == 0
+    end
+  end
+  
+  describe "has_friend_with_id" do
+    before(:each) do
+      @user = User.new(@valid_attributes)
+      @user.stub(:friends).and_return([mock(:id => 1), mock(:id => 2)])
+    end
+    
+    it "should return true when the user has a friend with the id specified" do
+      @user.has_friend_with_id(1).should be_true
+    end
+    
+    it "should return false when the user has not such friend" do
+      @user.has_friend_with_id(3).should be_false
+    end
+  end
 
   describe "list of interests" do
     before(:each) do

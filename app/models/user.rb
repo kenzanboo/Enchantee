@@ -19,6 +19,16 @@ class User < ActiveRecord::Base
     first_name + " " + last_name
   end
   
+  def interests_in_common_with(other)
+    Set.new(interests).intersection(Set.new(other.interests)).size
+  end
+  
+  def has_friend_with_id(id)
+    friends.map do |friend|
+      friend.id
+    end.include? id
+  end
+  
   def interest_attributes=(interest_attributes)
     interest_attributes.each do |attribute|
       interests<<Interest.find_or_create_by_name(attribute)

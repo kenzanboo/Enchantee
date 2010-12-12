@@ -1,4 +1,4 @@
-require 'spec_helper'
+  require 'spec_helper'
 
 describe "/users/show.html.erb" do
   include UsersHelper
@@ -11,6 +11,9 @@ describe "/users/show.html.erb" do
       :last_name => "value for last_name",
       :photo => "value for photo"
     )
+    @controller.stub('current_user').and_return(mock_model(User,
+      :friends => []
+    ))
   end
 
   it "renders attributes in <p>" do

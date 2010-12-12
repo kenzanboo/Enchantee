@@ -9,7 +9,7 @@ class NearbyController < ApplicationController
   end
   
   def list
-    @users = User.find(:all, :origin => current_user, :within => RADIUS, :order => 'distance')
+    @users = User.find(:all, :origin => current_user, :within => RADIUS, :order => 'distance').sort_by {|user| user.interests_in_common_with current_user}
   end
   
   def map

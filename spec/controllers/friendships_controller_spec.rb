@@ -15,6 +15,7 @@ describe FriendshipsController do
         mock_friendships.should_receive(:build).and_return(mock_friendship)
         mock_user = mock_model(User)
         mock_user.should_receive(:friendships).and_return(mock_friendships)
+        mock_user.should_receive(:has_friend_with_id).and_return(false)
         controller.stub(:current_user).and_return(mock_user)
         post :create, :friend_id => 1
         assigns[:friendship].should equal(mock_friendship)
@@ -26,6 +27,7 @@ describe FriendshipsController do
         mock_friendships.should_receive(:build).and_return(mock_friendship)
         mock_user = mock_model(User)
         mock_user.should_receive(:friendships).and_return(mock_friendships)
+        mock_user.should_receive(:has_friend_with_id).and_return(false)
         controller.stub(:current_user).and_return(mock_user)
         post :create, :friend_id => 1
         response.should redirect_to(user_url(1))
@@ -39,6 +41,7 @@ describe FriendshipsController do
         mock_friendships.should_receive(:build).and_return(mock_friendship)
         mock_user = mock_model(User)
         mock_user.should_receive(:friendships).and_return(mock_friendships)
+        mock_user.should_receive(:has_friend_with_id).and_return(false)
         controller.stub(:current_user).and_return(mock_user)
         post :create, :friend_id => 1
         assigns[:friendship].should equal(mock_friendship)
@@ -50,9 +53,26 @@ describe FriendshipsController do
         mock_friendships.should_receive(:build).and_return(mock_friendship)
         mock_user = mock_model(User)
         mock_user.should_receive(:friendships).and_return(mock_friendships)
+        mock_user.should_receive(:has_friend_with_id).and_return(false)
         controller.stub(:current_user).and_return(mock_user)
         post :create, :friend_id => 1
         response.should redirect_to(user_url(1))
+      end
+    end
+    
+    describe "should fail" do
+      it "when a user attempts to bookmark an already-bookmarked user" do
+        mock_user = mock_model(User)
+        mock_user.should_receive(:has_friend_with_id).with("1").and_return(true)
+        controller.stub(:current_user).and_return(mock_user)
+        post :create, :friend_id => 1
+        assigns[:friendship].should == nil
+      end
+      
+      it "when a user tries to bookmark themself" do
+        controller.stub(:current_user).and_return(mock(:id => 1, :has_friend_with_id => false))
+        post :create, :friend_id => 1
+        assigns[:friendship].should == nil
       end
     end
 
