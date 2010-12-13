@@ -30,10 +30,9 @@ class UsersController < ApplicationController
     @map = GMap.new("nearby_users")
     @marker = Marker.new(@user.latitude, 
                          @user.longitude, 
-                         @user.name, 
-                         @template.render(:partial => "nearby/user_short", :locals => {:user => @user}))
+                         @user.name)
     @map.center = @marker
-    @map.markers = [@marker]
+    @map.add_marker @marker
 
     respond_to do |format|
       format.html # show.html.erb

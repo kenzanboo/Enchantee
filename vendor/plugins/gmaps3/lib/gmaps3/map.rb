@@ -3,7 +3,6 @@ module Gmaps3
     
     attr_reader :id
     attr_accessor :center
-    attr_accessor :markers
     
     def width()
       @width
@@ -33,7 +32,18 @@ module Gmaps3
       @id = id
       self.width = width
       self.height = height
-      self.markers = []
+      @markers = []
+      @locations = Set.new()
+    end
+    
+    def add_marker(marker)
+      # This is the only way I could get around the issue of multiple markers at the exact same location: random perturbation of sufficiently close markers
+      if @locations.include? [format("%.4f", marker.latitude), format("%.4f", marker.longitude)]
+        marker.latitude += (rand()-0.5)/15000
+        marker.longitude += (rand()-0.5)/15000
+      end
+      @locations.add([format("%.4f", marker.latitude), format("%.4f", marker.longitude)])
+      @markers << marker
     end
     
     def self.api(options = {})
@@ -59,7 +69,7 @@ module Gmaps3
       out << "  var #{var} = new google.maps.Map($('#{id}'), options);\n"
       out << "  var marker = new Array();\n"
       out << "  var infowindow = new Array();\n"
-      markers.each_with_index do |marker, index|
+      @markers.each_with_index do |marker, index|
         out << "  marker[#{index}] = new google.maps.Marker({\n"
         out << "    position: new google.maps.LatLng(#{marker.latitude},#{marker.longitude}),\n"
         out << "    map: #{var},\n"

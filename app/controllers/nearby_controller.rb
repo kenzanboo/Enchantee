@@ -22,9 +22,8 @@ class NearbyController < ApplicationController
     end
     @map = GMap.new("nearby_users")
     @map.center = make_marker(current_user)
-    users = User.find(:all, :origin => current_user, :within => RADIUS, :order => 'distance')
-    @map.markers = users.map do |user|
-      make_marker(user)
+    User.find(:all, :origin => current_user, :within => RADIUS, :order => 'distance').each do |user|
+      @map.add_marker(make_marker(user))
     end
   end
   
