@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_filter :require_no_user, :only => [:new, :create]
   
   def update_location
-    if params[:latitude].kind_of? Numeric and params[:longitude].kind_of? Numeric
+    if not params[:latitude].to_s.empty? and not params[:longitude].to_s.empty?
       current_user.latitude, current_user.longitude = params[:latitude], params[:longitude]
       current_user.save
     elsif params[:address] and not params[:address].empty?

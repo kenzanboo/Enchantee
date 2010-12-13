@@ -3,7 +3,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :user, :has_many => [:interests, :categories]
   map.resource :user_session
   
-  map.update_location 'user/update_location', :controller => 'users', :action => 'update_location'
+  map.location '/user/location', :controller => 'users', :action => 'location'
+  map.update_location '/user/update_location', :controller => 'users', :action => 'update_location'
   
   map.resources :friendships
   
@@ -19,7 +20,7 @@ ActionController::Routing::Routes.draw do |map|
   map.saved "saved", :controller => "users", :action => "saved"
   map.edit_profile "edit", :controller => "users", :action => "edit"
   
-  map.root :controller => "users", :action => "location"
+  map.root :controller => "nearby", :action => "list"
 
   # The priority is based upon order of creation: first created -> highest priority.
 

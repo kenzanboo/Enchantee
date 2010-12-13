@@ -32,7 +32,7 @@ class NearbyController < ApplicationController
     def check_location()
       #raise "Error: User has no location" 
       unless current_user != nil and current_user.latitude != nil and current_user.longitude != nil
-        redirect_to root_path
+        redirect_to location_path()
         return false
       end
     end
