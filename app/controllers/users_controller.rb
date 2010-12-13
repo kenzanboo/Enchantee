@@ -1,30 +1,15 @@
 class UsersController < ApplicationController
   before_filter :require_user, :except => [:new, :create]
   before_filter :require_no_user, :only => [:new, :create]
-
-
-  def set_latitude
-    if params[:latitude]
-      latitude = params[:latitude]
-      #longitude = params[:location][:longitude]
-      
-      current_user.latitude = latitude
-      #current_user.longitude = longitude
-      
-      current_user.save
-    end
-    
-  end
   
-  def set_longitude
-    if params[:longitude]
-      longitude = params[:longitude]
-      current_user.longitude = longitude      
+  def update_location
+    if params[:latitude] and not params[:latitude].empty? and params[:longitude] and not params[:longitude].empty?
+      current_user.latitude, current_user.longitude = params[:latitude], params[:longitude]
       current_user.save
+    elsif params[:address] and not params[:address].empty?
+      #do lookup
     end
-    
   end
-  
   
   # GET /users/1
   # GET /users/1.xml
@@ -52,7 +37,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   # POST /users
@@ -74,7 +59,7 @@ class UsersController < ApplicationController
   # PUT /users/1
   # PUT /users/1.xml
   def update
-    @user = User.find(params[:id])
+    @user = current_user
     @interests=@user.interests
     
 
@@ -91,6 +76,7 @@ class UsersController < ApplicationController
 
   # DELETE /users/1
   # DELETE /users/1.xml
+=begin
   def destroy
     @user = User.find(params[:id])
     @user.destroy
@@ -100,6 +86,7 @@ class UsersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+=end
   
   def remove_interest
     @user=User.find(params[:user_id])

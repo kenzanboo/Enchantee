@@ -4,8 +4,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <%= javascript_include_tag :defaults %>
   <title>Enchantée</title>
+  <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag "update_location" %>
   <%= stylesheet_link_tag 'style' %>
   <%= yield :head %>
 </head>
@@ -17,6 +18,8 @@
 <p style="color: green"><%= notice %></p>
 
 <%= yield %>
+
+<img id="spinner" src="/images/ajax-loader.gif">
 
 </div> <!-- container -->
 </body>

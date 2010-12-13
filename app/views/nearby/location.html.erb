@@ -1,0 +1,25 @@
+<% content_for :head do %>
+	<script type="text/javascript">
+		function successCallback(position) {
+			$('latitude').value = position.coords.latitude;
+			$('longitude').value = position.coords.longitude;
+			$('locationform').submit();
+		}
+
+		function errorCallback(position) {
+			$('pleasewait').hide();
+			$('noloc').show();
+		}
+	</script>
+<% end %>
+
+<span id="pleasewait">Please wait while we get your location</span>
+
+<div id="noloc" style="display:none">
+	We were unable to get your location. Please type your address instead
+	<% form_for current_user, :url => {:action => 'update_location'}, :html => {:method => :post} do %>
+	    <%= hidden_field_tag('latitude', '') %>
+		<%= hidden_field_tag('longitude', '') %>
+		<%= text_field_tag('address', '') %>
+	<% end %>
+</div>

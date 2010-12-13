@@ -1,5 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :users, :has_many => [:interests, :categories]
+  map.resource :user, :has_many => [:interests, :categories]
   map.resource :user_session
   
   map.update_location 'users/:user_id/update_location', :controller => 'users', :action => 'update_location'
@@ -8,6 +9,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.nearby_list '/nearby/list', :controller => 'nearby', :action => 'list'
   map.nearby_map '/nearby/map', :controller => 'nearby', :action => 'map'
+  map.nearby_location '/nearby/location', :controller => 'nearby', :action => 'location'
   
   map.welcome "welcome", :controller => "misc", :action => "welcome"
   map.signup "signup", :controller => "users", :action => "new"
@@ -15,7 +17,7 @@ ActionController::Routing::Routes.draw do |map|
   map.logout "logout", :controller => "user_sessions", :action => "destroy"
   map.homepage "home", :controller => 'nearby', :action => 'list'
   
-  map.root :controller => "misc", :action => "index"
+  map.root :controller => "nearby", :action => "location"
   map.placeholder "placeholder", :controller => "placeholder", :action => "index"
 
   # The priority is based upon order of creation: first created -> highest priority.

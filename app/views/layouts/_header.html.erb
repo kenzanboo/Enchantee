@@ -5,7 +5,7 @@
     	<li><%= link_to 'Home', root_path %></li>
 	    <li><%= link_to 'Map', nearby_map_path %></li>
 	    <li><%= link_to 'Profile', user_path(current_user.id) %></li>
-	    <li><%= link_to 'Edit', edit_user_path(current_user.id) %></li>
+	    <li><%= link_to 'Edit', '/user/edit' %></li>
 	    <li><%= link_to 'Logout', logout_path %></li>
 		</ul>
   </div> <!-- headerPanelLinkBox -->
