@@ -1,10 +1,10 @@
 <div class="userInfoPartial">
   <%= link_to h(user.name), user_path(user) %>
-  <br />
-	
+
   <% if user.respond_to?(:distance)%>
     (<%= number_with_precision user.distance, :precision => 2 %> mi)
   <%end%>
+  <br />
 
   <% user.categories.each do |category| %>
     <span class="userInfoPartialCategory"><%= h category.name %></span>:
