@@ -20,7 +20,6 @@ ActionController::Routing::Routes.draw do |map|
   map.edit_profile "edit", :controller => "users", :action => "edit"
   
   map.root :controller => "users", :action => "location"
-  map.placeholder "placeholder", :controller => "placeholder", :action => "index"
 
   # The priority is based upon order of creation: first created -> highest priority.
 
