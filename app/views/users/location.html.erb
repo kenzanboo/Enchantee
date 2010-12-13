@@ -13,13 +13,17 @@
 	</script>
 <% end %>
 
-<span id="pleasewait">Please wait while we get your location</span>
+<span id="pleasewait">Retrieving your location &#8230</span>
 
 <div id="noloc" style="display:none">
-	We were unable to get your location. Please type your address instead
-	<% form_for current_user, :url => update_location_path(), :html => {:method => :post, :id => "locationform"} do %>
-	    <%= hidden_field_tag('latitude', '') %>
-		<%= hidden_field_tag('longitude', '') %>
-		<%= text_field_tag('address', '') %>
-	<% end %>
+	Your location is unavailable. Please provide your address instead:
+	<div class="">
+	  <% form_for current_user, :url => update_location_path(), :html => {:method => :post, :id => "locationform"} do %>
+  	  <%= hidden_field_tag('latitude', '') %>
+  		<%= hidden_field_tag('longitude', '') %>
+  		<div class="">
+  		  <%= text_field_tag('address', '') %>
+  		</div>
+  	<% end %>
+	</div>
 </div>
