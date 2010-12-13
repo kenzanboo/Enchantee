@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     elsif params[:address] and not params[:address].empty?
       #do lookup
     end
+    redirect_to :controller => 'nearby', :action => 'map'
   end
   
   # GET /users/1

@@ -3,7 +3,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :user, :has_many => [:interests, :categories]
   map.resource :user_session
   
-  map.update_location 'users/:user_id/update_location', :controller => 'users', :action => 'update_location'
+  map.update_location 'user/update_location', :controller => 'users', :action => 'update_location'
   
   map.resources :friendships
   

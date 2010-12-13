@@ -7,11 +7,12 @@ Event.observe(window, 'load', function() {
 });
 
 function successCallback(position) {
-	new Ajax.request('/users/update_location', {
+	new Ajax.Request('/users/update_location', {
 		method:'post',
 		parameters: {latitude: position.coords.latitude,
 					 longitude: position.coords.longitude}
 	})
+	document.getElementById('spinner').src = "/images/located.png";
 }
 
 function errorCallback(position) {
