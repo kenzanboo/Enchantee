@@ -32,7 +32,9 @@ class User < ActiveRecord::Base
   
   def interest_attributes=(interest_attributes)
     interest_attributes.each do |attribute|
-      interests<<Interest.find_or_create_by_name(attribute)
+      if(attribute[:name]!=""&&!interests.find_by_name(attribute[:name]))
+        interests<<Interest.find_or_create_by_name(attribute)
+      end
     end
   end
   
