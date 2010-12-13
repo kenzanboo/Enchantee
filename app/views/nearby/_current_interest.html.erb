@@ -1,21 +1,16 @@
-<div>
+<h1>What are you interested in today?</h1>
+<div class="statusForm">
 	<% remote_form_for :interest, :url => {:controller => :users, :action => 'current_interest' },
 	:update => 'current_interest' do |interest_form| %>
+	  <!-- <%= h interest_form.label(:category_id) %> -->
+	  <%= h interest_form.collection_select(:category_id, Category.all, :id, :name) %>
 
-	<h1>What do you want to talk about?</h1>
-	
-    <p>
-      <%=h interest_form.label(:name) %><br />
-      <%=h interest_form.text_field(:name) %>
-    </p>
-    <p>
-      <%=h interest_form.label(:category_id) %><br />
-      <%=h interest_form.collection_select(:category_id, Category.all, :id, :name) %>
-    </p>
-  	<p>
-    	<%= interest_form.submit 'Update' %>
-  	</p>
+    <!-- <%= h interest_form.label(:name) %> -->
+    <%= h interest_form.text_field(:name, :class => "statusFormInput") %>
+  
+  	<%= interest_form.submit 'Update' %>
 	<% end %>
+	
 	<div id="current_interest">
 		<% if user.current_interest_id>0 %>
 			<%= render :partial => 'current_interest_show', :locals=>{:interest=>user.interests.find(user.current_interest_id)}%>
