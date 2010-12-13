@@ -14,27 +14,26 @@ describe UsersController do
   before(:each) do
   end
   
-  describe "post set_longitude" do
-    it "should update the longitude" do
-      mock_user.should_receive(:longitude=).with(11.0)
-      mock_user.should_receive(:save).and_return true
-      controller.stub(:current_user).and_return(mock_user)
+  describe "post update_location" do
+    it "should update the latitude and longitude" do
+      user = mock_user()
+      user.should_receive(:longitude=).with(11.0)
+      user.should_receive(:latitude=).with(12.0)
+      user.should_receive(:save).and_return true
+      controller.stub(:current_user).and_return(user)
       
-      post :set_longitude, :longitude => 11.0
+      post :update_location, :longitude => 11.0, :latitude => 12.0
+    end
+    
+    it "should update the lat/lng via geocoding a valid address" do
+      user = mock_user()
+      user.should_receive(:longitude=).with(-122.253247)
+      user.should_receive(:latitude=).with(37.867684)
+      user.should_receive(:save).and_return true
+      controller.stub(:current_user).and_return user
+      post :update_location, :longitude => "", :latitude => "", :address => "2721 Channing Way, Berkeley CA"
     end
   end
-  
-  describe "post set_latitude" do
-    it "should update the latitude" do
-      mock_user.should_receive(:latitude=).with(10.0)
-      mock_user.should_receive(:save).and_return true
-      controller.stub(:current_user).and_return(mock_user)
-      
-      post :set_latitude, :latitude => 10.0
-    end
-  end
-      
-  
   
   describe "GET show" do
     it "assigns the requested user as @user" do
@@ -59,7 +58,7 @@ describe UsersController do
 
   describe "GET edit" do
     it "assigns the requested user as @user" do
-      controller.stub(:current_user).and_return(mock_model(User))
+      controller.stub(:current_user).and_return(mock_user)
       User.stub(:find).with("37").and_return(mock_user)
       get :edit, :id => "37"
       assigns[:user].should equal(mock_user)
@@ -144,7 +143,7 @@ describe UsersController do
     end
 
   end
-
+=begin
   describe "DELETE destroy" do
     before(:each) do
       controller.stub(:current_user).and_return(mock_model(User))
@@ -162,6 +161,7 @@ describe UsersController do
       response.should redirect_to(users_url)
     end
   end
+=end
   
   describe "DELETE remove_interest" do
     it "should remove the interest" do

@@ -17,7 +17,7 @@ ActionController::Routing::Routes.draw do |map|
   map.logout "logout", :controller => "user_sessions", :action => "destroy"
   map.homepage "home", :controller => 'nearby', :action => 'list'
   
-  map.root :controller => "nearby", :action => "location"
+  map.root :controller => "users", :action => "location"
   map.placeholder "placeholder", :controller => "placeholder", :action => "index"
 
   # The priority is based upon order of creation: first created -> highest priority.

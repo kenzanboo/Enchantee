@@ -3,13 +3,17 @@ class UsersController < ApplicationController
   before_filter :require_no_user, :only => [:new, :create]
   
   def update_location
-    if params[:latitude] and not params[:latitude].empty? and params[:longitude] and not params[:longitude].empty?
+    if params[:latitude].kind_of? Numeric and params[:longitude].kind_of? Numeric
       current_user.latitude, current_user.longitude = params[:latitude], params[:longitude]
       current_user.save
     elsif params[:address] and not params[:address].empty?
-      #do lookup
+      location = Geokit::Geocoders::GoogleGeocoder.geocode(params[:address])
+      if location.success
+        current_user.latitude, current_user.longitude = location.lat, location.lng
+        current_user.save
+      end
     end
-    redirect_to :controller => 'nearby', :action => 'map'
+    redirect_to :controller => 'nearby', :action => 'list'
   end
   
   # GET /users/1
