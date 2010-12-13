@@ -1,6 +1,13 @@
 <% if friend_id==user_id %>
-<% elsif Friendship.find_by_user_id_and_friend_id(user_id, friend_id) or Friendship.find_by_user_id_and_friend_id(friend_id, user_id) %>
-  (<%= link_to "Remove from Saved", friendships_path(:friend_id => friend_id), :method => :delete %>)
 <% else %>
-  (<%= link_to "Save #{h(@user.first_name)}", friendships_path(:friend_id => friend_id), :method => :post %>)
+  <% test=Friendship.find_by_user_id_and_friend_id(user_id, friend_id) %>
+  <% if test==nil %>
+    <% test=Friendship.find_by_user_id_and_friend_id(friend_id, user_id) %>
+  <% end %>
+  <% puts test %>
+  <% if test %>
+    (<%= link_to "Remove from Saved", friendship_path(:friend_id => friend_id), :method => :delete, :controller => :friendships %>)
+  <% else %>
+    (<%= link_to "Save #{h(@user.first_name)}", friendships_path(:friend_id => friend_id), :method => :post %>)
+  <% end %>
 <% end %>

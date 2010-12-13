@@ -5,5 +5,6 @@ class Interest < ActiveRecord::Base
   
   validates_existence_of :category
   validates_uniqueness_of :name
+  validates_presence_of :name
   
 end

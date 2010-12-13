@@ -15,7 +15,7 @@ class FriendshipsController < ApplicationController
   # DELETE /friendships/1
   # DELETE /friendships/1.xml
   def destroy
-    @friendship = current_user.friendships.find(params[:id])
+    @friendship = current_user.friendships.find_by_friend_id(params[:friend_id])
     @friendship.destroy
     redirect_to(user_path(current_user), :notice => 'Removed bookmarked.')
   end
