@@ -42,14 +42,10 @@
     <%= f.text_field :last_name %>
   </div>
   
-  <div class="editFormEntry">
-    <%= f.label :photo %>
-    <%= f.file_field :photo %>
-  </div>
-  
 	<div id="interests">
 		<%= render :partial => 'edit_interest_read_only', :collection => @user.interests, :as => :interest %>
 	</div>
+	
 	<%= add_interest_link "Add Interest" %>
 	
   <%= f.submit 'Update' %>
