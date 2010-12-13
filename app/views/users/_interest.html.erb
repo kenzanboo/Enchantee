@@ -1,17 +1,14 @@
-<div class="interest">
+<div class="editInterestPartial">
 
   <% fields_for "user[interest_attributes][]", interest do |interest_form| %>
     <%= interest_form.error_messages %>
     
-    <p>
-      <%=h interest_form.label(:name) %><br />
-      <%=h interest_form.text_field(:name) %>
-    </p>
-    <p>
-      <%=h interest_form.label(:category_id) %><br />
-      <%=h interest_form.collection_select(:category_id, categories, :id, :name) %>
-    </p>
-    <p>
-      <%= link_to_function "Remove", "$(this).up('.interest').remove()" %>
+    <%= link_to_function "Remove", "$(this).up('.editInterestPartial').remove()" %>
+    
+    <!-- <%=h interest_form.label(:category_id) %> -->
+    <%=h interest_form.collection_select(:category_id, categories, :id, :name) %>
+    
+    <!-- <%=h interest_form.label(:name) %> -->
+    <%=h interest_form.text_field(:name) %>
   <% end %>
 </div>

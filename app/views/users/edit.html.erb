@@ -1,9 +1,9 @@
 <% content_for :head do %>
 	<script type="text/javascript">
 		Event.observe(window, "load", function() {
-			$$(".remove_button").each(function(element) {
+			$$(".editInterestPartialRemoveLink").each(function(element) {
 				Event.observe(element, "click", function(event) {
-					element.up('.interest').hide()
+					element.up('.editInterestPartial').hide()
 					return true
 				})
 			})
@@ -46,7 +46,9 @@
 		<%= render :partial => 'edit_interest_read_only', :collection => @user.interests, :as => :interest %>
 	</div>
 	
+	<br />
 	<%= add_interest_link "Add Interest" %>
+	<br /><br />
 	
   <%= f.submit 'Update' %>
 <% end %>

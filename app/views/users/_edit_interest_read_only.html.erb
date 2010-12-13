@@ -1,11 +1,19 @@
-<div class="interest" id="<%=h interest.id%>">
-  	<p>
-      <label>Name</label>
-      <%=h interest.name %>
-    </p>
-    <p>
-      <label>Category</label>
-      <%=h interest.category.name %>
-    </p>
-	<span class="remove_button"><%= link_to_remote "Remove", :url => {:action => :remove_interest, :controller => "users", :id => interest.id, :location => "", :user_id => 		@user.id}, :update => interest.id.to_s %></span>
+<div class="editInterestPartial">
+  <span class="editInterestPartialRemoveLink">
+	  <%= link_to_remote "Remove",
+	      :url => {:action => :remove_interest,
+	              :controller => "users",
+        	      :id => interest.id,
+        	      :location => "",
+        	      :user_id => @user.id},
+        :update => interest.id.to_s
+    %>
+  </span>
+  
+  <span class="editInterestPartialCategory">
+    <%=h interest.category.name %>
+  </span>
+  
+  <%=h interest.name %>
+	
 </div>
