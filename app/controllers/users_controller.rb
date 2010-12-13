@@ -124,11 +124,11 @@ class UsersController < ApplicationController
   def current_interest
     puts params[:category_id]
     int=Interest.find_or_create_by_name(params[:interest])
-    if not current_user.interests.find(int.id)
+    if current_user.interests.member?(Interest.find(int.id))
       current_user.interests<<int
     end
     current_user.current_interest_id=int.id
     current_user.save
-    render :partial => 'show_interest', locals=>{:interest=>int}
+    render :partial => 'show_interest', :locals=>{:interest=>int}
   end
 end
