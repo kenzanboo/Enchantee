@@ -1,9 +1,8 @@
 <%= render :partial=>'current_interest', :locals=>{:user=>current_user} %>
 <h1>Nearby Users</h1>
-<ul>
-	<% @users.each do |user| %>
-		<li>
-			<%= render :partial=>'user_short', :locals=>{:user=>user} %>
-		</li>
-	<% end %>
-</ul>
+
+<% @users.each do |user| %>
+	<div>
+		<%= render :partial=>'user_short', :locals=>{:user=>user} %>
+	</div>
+<% end %>

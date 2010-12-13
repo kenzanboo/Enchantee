@@ -40,4 +40,16 @@ class User < ActiveRecord::Base
       interest.save(false)
     end
   end
+  
+  def categories
+    category_list=[]
+    interests.each do |interest|
+      category_list<<interest.category
+    end
+    category_list.uniq
+  end
+  
+  def interests_with_category(category)
+    [interests.find(:all, :conditions => ["category_id = ?", category.id])].flatten
+  end
 end

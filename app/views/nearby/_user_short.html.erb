@@ -1,14 +1,17 @@
-<span class="interest">
-	<%= image_tag("rails.png") %>
+<span class="">
 	<% link_to(user_path(user)) do %>
 		<%=h user.name %>
 	<%end%>
 	<%if user.methods.include?(:distance)%>
 	 (<%= number_with_precision user.distance, :precision => 2 %> mi)
 	<%end%>
-	<ul>
-		<% user.interests.first(4).each do |interest| %>
-			<li><%=h interest.name%></li>
+	
+		<% user.categories.each do |category| %>
+			<span class=""><%=h category.name%></span>:
+				<% user.interests_with_category(category).first(4).each do |interest| %>
+					 <span class=""><%=h " " + interest.name %></span>
+				<% end %>
+			
 		<%end%>
-	</ul>
+	
 </span>

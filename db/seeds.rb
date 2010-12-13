@@ -9,82 +9,74 @@ category_list=["Music", "Sports", "Politics", "Fashion", "Movies", "Television",
 @categories=category_list.map do |category|
   Category.create(:name=>category)
 end
-names_list_soda_1=["Brian Harvey", "Dan Garcia", "David Patterson", "Christos Papadimitriou", "David Wagner", ];
-names_list_soda_2=["Babak Ayazifar", "Bernhard Boser", "Ali Niknejad", "Edward A. Lee", "Ronald S. Fearing"];
-names_list_gspp_1=["Barack Obama", "John Boehner", "Nancy Pelosi", "Dick Cheney", "Ron Paul"];
-names_list_gspp_2=["Stephen Colbert", "Rush Limbaugh", "John Stewart", "Bill O'Reilly", "Lewis Black"];
-names_list_th_1=["Inigo Montoya", "Arthur Dent", "Zaphod Beeblebrox", "Patches O'Houlihan", "Ron Burgandy"];
-names_list_th_2=["Master Chief", "Captain Falcon", "Super Mario", "Star Fox", "Samus Aran"];
-names_list_univ_1=["Chuck Norris", "Mr. T", "Bruce Wayne", "Tony Stark", "Sheldon Cooper"];
-names_list_univ_2=["Sad Keanu", "Leeroy Jenkins", "Antoine Dodson", "The Game", "Over 9000"];
+names_list_soda=["Brian Harvey", "Dan Garcia", "David Patterson", "Christos Papadimitriou", "David Wagner", "Babak Ayazifar", "Bernhard Boser", "Ali Niknejad", "Edward A. Lee", "Ronald S. Fearing"];
+names_list_gspp=["Barack Obama", "John Boehner", "Nancy Pelosi", "Dick Cheney", "Ron Paul", "Stephen Colbert", "Rush Limbaugh", "John Stewart", "Bill O'Reilly", "Lewis Black"];
+names_list_th=["Inigo Montoya", "Arthur Dent", "Zaphod Beeblebrox", "Patches O'Houlihan", "Ron Burgandy", "Master Chief", "Captain Falcon", "Super Mario", "Star Fox", "Samus Aran"];
+names_list_univ=["Chuck Norris", "Mr. T", "Bruce Wayne", "Tony Stark", "Sheldon Cooper", "Sad Keanu", "Leeroy Jenkins", "Antoine Dodson", "The Game", "Over 9000"];
 
 music_list=["50 Cent", "Taylor Swift", "Rick Astley", "AC/DC", "Daft Punk"];
 
-music_interests=music_list.map do |interest|
+music_list.each do |interest|
   Interest.create(:name=>interest, :category=>Category.find_by_name("Music"))
 end
 
 movies_list=["The Matrix", "Inception", "Avatar", "WALL-E", "Serenity"];
 
-movie_interests=movies_list.map do |interest|
+movies_list.each do |interest|
   Interest.create(:name=>interest, :category=>Category.find_by_name("Movies"))
 end
 
-names_list_soda_1.each do |name|
+tv_interests=["House MD", "Dora the Explorer", "Power Rangers", "Crossfire", "Days of Our Lives"]
+
+movies_list.each do |interest|
+  Interest.create(:name=>interest, :category=>Category.find_by_name("Television"))
+end
+
+interest_count = Interest.count-1
+
+names_list_soda.each do |name|
   latitude= 37.875582 + (rand()-0.5)/1000
   longitude= -122.25856 + (rand()-0.5)/1000
   testuser=User.create(:username=>name, :first_name=> name.split.first, :last_name=> name.split.last, :password=>"fuckyocouch", :password_confirmation=>"fuckyocouch", :latitude=>latitude, :longitude=>longitude);
-  testuser.interests<<music_interests;
+  interest_nums=[];
+  12.times do interest_nums<<(rand(interest_count)+1) end
+  interest_nums.uniq.each do |interest_num|
+    testuser.interests<<Interest.first(:conditions => [ "id >= ?", interest_num])
+  end
 end
 
-names_list_soda_2.each do |name|
-  latitude= 37.875582 + (rand()-0.5)/1000
-  longitude= -122.258024 + (rand()-0.5)/1000
-  testuser=User.create(:username=>name, :first_name=> name.split.first, :last_name=> name.split.last, :password=>"fuckyocouch", :password_confirmation=>"fuckyocouch", :latitude=>latitude, :longitude=>longitude);
-  testuser.interests<<movie_interests;
-end
-
-names_list_gspp_1.each do |name|
+names_list_gspp.each do |name|
   latitude= 37.875669 + (rand()-0.5)/1000
   longitude= -122.258024 + (rand()-0.5)/1000
   testuser=User.create(:username=>name, :first_name=> name.split.first, :last_name=> name.split.last, :password=>"fuckyocouch", :password_confirmation=>"fuckyocouch", :latitude=>latitude, :longitude=>longitude);
-  testuser.interests<<music_interests;
-end
-
-names_list_gspp_2.each do |name|
-  latitude= 37.875669 + (rand()-0.5)/1000
-  longitude= -122.258466 + (rand()-0.5)/1000
-  testuser=User.create(:username=>name, :first_name=> name.split.first, :last_name=> name.split.last, :password=>"fuckyocouch", :password_confirmation=>"fuckyocouch", :latitude=>latitude, :longitude=>longitude);
-  testuser.interests<<movie_interests;
+  interest_nums=[];
+  12.times do interest_nums<<(rand(interest_count)+1) end
+  interest_nums.uniq.each do |interest_num|
+    testuser.interests<<Interest.first(:conditions => [ "id >= ?", interest_num])
+  end
   if(testuser.first_name=="Bill")
     testuser.interests<<Interest.create(:name=>"Doing it live!!!!!", :category_id=>6)
   end
 end
 
-names_list_th_1.each do |name|
+names_list_th.each do |name|
   latitude= 37.877038 + (rand()-0.5)/1000
   longitude= -122.258466 + (rand()-0.5)/1000
   testuser=User.create(:username=>name, :first_name=> name.split.first, :last_name=> name.split.last, :password=>"fuckyocouch", :password_confirmation=>"fuckyocouch", :latitude=>latitude, :longitude=>longitude);
-  testuser.interests<<music_interests;
+  interest_nums=[];
+  12.times do interest_nums<<(rand(interest_count)+1) end
+  interest_nums.uniq.each do |interest_num|
+    testuser.interests<<Interest.first(:conditions => [ "id >= ?", interest_num])
+  end
 end
 
-names_list_th_2.each do |name|
-  latitude= 37.877038 + (rand()-0.5)/1000
-  longitude= -122.258466 + (rand()-0.5)/1000
-  testuser=User.create(:username=>name, :first_name=> name.split.first, :last_name=> name.split.last, :password=>"fuckyocouch", :password_confirmation=>"fuckyocouch", :latitude=>latitude, :longitude=>longitude);
-  testuser.interests<<movie_interests;
-end
-
-names_list_univ_1.each do |name|
+names_list_univ.each do |name|
   latitude= 37.87155 + (rand()-0.5)/1000
   longitude= -122.27295 + (rand()-0.5)/1000
   testuser=User.create(:username=>name, :first_name=> name.split.first, :last_name=> name.split.last, :password=>"fuckyocouch", :password_confirmation=>"fuckyocouch", :latitude=>latitude, :longitude=>longitude);
-  testuser.interests<<music_interests;
-end
-
-names_list_univ_2.each do |name|
-  latitude= ( 37.87155 + (rand() - 0.5)/1000 )
-  longitude= ( -122.27295 + (rand() - 0.5)/1000 )
-  testuser=User.create(:username=>name, :first_name=> name.split.first, :last_name=> name.split.last, :password=>"fuckyocouch", :password_confirmation=>"fuckyocouch", :latitude=>latitude, :longitude=>longitude);
-  testuser.interests<<movie_interests;
+  interest_nums=[];
+  12.times do interest_nums<<(rand(interest_count)+1) end
+  interest_nums.uniq.each do |interest_num|
+    testuser.interests<<Interest.first(:conditions => [ "id >= ?", interest_num])
+  end
 end
