@@ -21,7 +21,30 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     
-    @interests=@user.interests
+    @interests = @user.interests
+    
+    unless @user.latitude and @user.longitude
+      raise "User has no location"
+    end
+    
+    @map = GMap.new("nearby_users")
+    @marker = Marker.new(@user.latitude, 
+                         @user.longitude, 
+                         @user.name, 
+                         @template.render(:partial => "nearby/user_short", :locals => {:user => @user}))
+    @map.center = @marker
+    @map.markers = [@marker]
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @user }
+    end
+  end
+  
+  # GET /users/1
+  # GET /users/1.xml
+  def saved
+    @user = User.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb

@@ -1,38 +1,20 @@
-<% if not current_user.friends.include? @user and current_user != @user %>
-<p>
-  
-</p>
-<% end %>
+<h1><%= h @user.name %> (<%= link_to "Save #{h(@user.first_name)}", friendships_path(:friend_id => @user), :method => :post %>)</h1>
 
-<h1><%= h @user.name %> (<%= link_to "Bookmark", friendships_path(:friend_id => @user), :method => :post %>)</h1>
+<h2><%= h @user.first_name %> is interested in...</h2>
 
-
-<h2>Interests</h2>
-<table>
+<table class="interestTable">
   <tr>
-	<th>Name</th>
-	<th>Category</th>
+    <th>Category</th>
+    <th>Interest</th>
   </tr>
   <%= render :partial => 'show_interest', :collection => @interests, :as => :interest %>
 </table>
+<br />
 
-<p>
-  <b>Bookmarked Users:</b>
-  <ul>
-  <% @user.friendships.each do |friendship| %>
-    <li><%= link_to friendship.friend.name, friendship.friend %> 
-    <% if @user == current_user %>
-      (<%= link_to "Remove", friendship, :method => :delete %>)</li>
-    <% end %>
-  <% end %>
-  </ul>
-</p>
+<% content_for :head do %>
+  <%= GMap.api %>
+  <% @map.width, @map.height = "100%", 400 %>
+  <%= @map.write %>
+<% end %>
 
-<p>
-  <b>Bookmarked By:</b>
-  <ul>
-  <% @user.inverse_friends.each do |friend| %>
-	<li><%= link_to friend.name, friend %></li>
-  <% end %>
-  </ul>
-</p>
+<%= @map.div %>

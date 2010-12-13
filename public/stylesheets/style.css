@@ -57,6 +57,10 @@ h1 {
     font-size: 1.3em;
 }
 
+h2 {
+    font-size: 1.2em;
+}
+
 /* -------------------------------------------------------------------------- */
 
 #container {
@@ -171,6 +175,25 @@ h1 {
     height: 20px;
     
     font-size: 1em;
+}
+
+/* -------------------------------------------------------------------------- */
+
+.interestTable {
+    width: 100%;
+    
+    border: 1px;
+    border-style: solid;
+    border-color: grey;
+}
+
+.interestTable th {
+    text-align: left;
+    /*text-transform: uppercase;*/
+}
+
+.interestTable td {
+    text-align: left;
 }
 
 /* -------------------------------------------------------------------------- */
