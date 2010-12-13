@@ -44,7 +44,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.xml
   def saved
-    @user = User.find(params[:id])
+    @user = current_user
 
     respond_to do |format|
       format.html # show.html.erb

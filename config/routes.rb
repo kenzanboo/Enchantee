@@ -16,6 +16,8 @@ ActionController::Routing::Routes.draw do |map|
   map.login "login", :controller => "user_sessions", :action => "new"
   map.logout "logout", :controller => "user_sessions", :action => "destroy"
   map.homepage "home", :controller => 'nearby', :action => 'list'
+  map.saved "saved", :controller => "users", :action => "saved"
+  map.edit_profile "edit", :controller => "users", :action => "edit"
   
   map.root :controller => "users", :action => "location"
   map.placeholder "placeholder", :controller => "placeholder", :action => "index"

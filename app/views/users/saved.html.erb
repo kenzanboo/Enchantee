@@ -1,0 +1,5 @@
+<h1>Saved Users</h1>
+
+<% @user.friendships.each do |friendship| %>
+  <%= render :partial=>'nearby/user_short', :locals=>{:user => friendship.friend} %>
+<% end %>
