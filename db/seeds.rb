@@ -80,3 +80,12 @@ names_list_univ.each do |name|
     testuser.interests<<Interest.first(:conditions => [ "id >= ?", interest_num])
   end
 end
+
+latitude= 37.875582 + (rand()-0.5)/1000
+longitude= -122.25856 + (rand()-0.5)/1000
+pogo=User.create(:username=>"pogo", :first_name=>"pogo", :last_name=> "fox", :password=>"toucan", :password_confirmation=>"toucan", :latitude=>latitude, :longitude=>longitude);
+interest_nums=[];
+12.times do interest_nums<<(rand(interest_count)+1) end
+interest_nums.uniq.each do |interest_num|
+  pogo.interests<<Interest.first(:conditions => [ "id >= ?", interest_num])
+end

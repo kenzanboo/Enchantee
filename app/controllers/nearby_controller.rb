@@ -41,6 +41,6 @@ class NearbyController < ApplicationController
       Marker.new(user.latitude, 
                  user.longitude, 
                  user.name, 
-                 @template.render(:partial => "user_short", :locals => {:user => user}))
+                 @template.render(:partial => "user_shorter", :locals => {:user => user}))
     end
 end

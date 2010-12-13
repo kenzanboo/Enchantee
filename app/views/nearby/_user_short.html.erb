@@ -2,14 +2,14 @@
   <%= link_to h(user.name), user_path(user) %>
   <br />
 	
-	<% if user.methods.include?(:distance) %>
+  <% if user.respond_to?(:distance)%>
     (<%= number_with_precision user.distance, :precision => 2 %> mi)
-	<% end %>
-	
-	<% user.categories.each do |category| %>
-		<span class="userInfoPartialCategory"><%= h category.name %></span>:
-			<% user.interests_with_category(category).first(4).each do |interest| %>
-				 <span class="userInfoPartialInterest"><%= h " " + interest.name %></span>
-			<% end %>
+  <%end%>
+
+  <% user.categories.each do |category| %>
+    <span class="userInfoPartialCategory"><%= h category.name %></span>:
+		<% user.interests_with_category(category).first(4).each do |interest| %>
+			<span class="userInfoPartialInterest"><%= h " " + interest.name %></span>
+	  <% end %>
 	<% end %>
 </div>

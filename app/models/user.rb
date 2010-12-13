@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
                    :lng_column_name => :longitude
                    
   validates_associated :interests
+  validates_presence_of :first_name, :last_name
 
   after_update :save_interests
   
