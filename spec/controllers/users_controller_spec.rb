@@ -4,6 +4,8 @@ describe UsersController do
 
   def mock_user(stubs={})
     stubs[:interests] ||= []
+    stubs[:latitude] ||= 0.0
+    stubs[:longitude] ||= 0.0
     @mock_user ||= mock_model(User, stubs)
   end
   
