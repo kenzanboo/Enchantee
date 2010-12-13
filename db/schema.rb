@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101212041230) do
+ActiveRecord::Schema.define(:version => 20101213172104) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -43,14 +43,14 @@ ActiveRecord::Schema.define(:version => 20101212041230) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "photo"
-    t.float    "latitude"
-    t.float    "longitude"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "crypted_password"
     t.string   "password_salt"
     t.string   "persistence_token"
     t.integer  "current_interest_id", :default => 0
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
 end
