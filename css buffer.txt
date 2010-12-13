@@ -1,0 +1,50 @@
+#headerPanelLinkBox ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    overflow: hidden;
+}
+
+#headerPanelLinkBox li {
+    display: inline;
+    float: left;
+    /*white-space: nowrap;*/
+    padding: 0px;
+    margin: 0px;
+}
+/*    clear: both;*/
+    float: right;
+
+
+	#headerPanelLinkBox a:link, a:visited {
+	    display: block;
+	    border-width: 1px;
+	    border-style: solid;
+	    border-color: black;
+	    width: 80px;
+	    height: 32px;
+
+	    /*padding-top: 8px;*/
+
+	    margin-left: 10px;
+	    margin-top: 10px;
+	    margin-bottom: 10px;
+
+	    color: black;
+	    font-weight: bold;
+	    text-align: center;
+	    font-size: 1.2em;
+
+	    background-color: white;
+	    text-decoration: none;
+	}
+
+	#headerPanelLinkBox a:hover {
+	    color: gray;
+	    border-color: gray;
+	}
+
+	#headerPanelLinkBox a:active {
+	    border-color: red;
+	}

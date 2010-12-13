@@ -1,6 +1,31 @@
+/*-------------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------------*/
+
+
 body {
     font-family: helvetica, sans-serif;
     font-size: 18px;
+
+	background-image: url( /images/blue-gradient-background.png ) !important;
+   	/*background: -webkit-gradient(
+   	    linear,
+   	    left bottom,
+   	    left top,
+   	    color-stop(0.09, rgb(191,235,255)),
+   	    color-stop(0.85, rgb(255,255,255))
+   	);
+   	background: -moz-linear-gradient(
+   	    center bottom,
+   	    rgb(191,235,255) 9%,
+   	    rgb(255,255,255) 85%
+   	);*/
+
+
+	background-repeat: repeat-x;
+	background-color: rgb(191,235,255);
+	
+
 }
 
 a:link, a:visited {
@@ -35,69 +60,88 @@ h1 {
 /* -------------------------------------------------------------------------- */
 
 #container {
+	
     width: 640px;
-		margin-left: auto;
-		margin-right: auto;
+	margin-left: auto;
+	margin-right: auto;
+	
 }
-
+/*HEADER*/
 /* -------------------------------------------------------------------------- */
 
 #headerPanel {
-    
+   	position: relative;
 }
+
+#spinner{
+	position:absolute;
+ 	top:10px;
+	right:0;
+}
+
 
 #headerPanelLinkBox {
-/*    clear: both;*/
-    float: right;
-}
+	background: #000305;
+	font-size: 1.143em;
+	height: 40px;
+	line-height: 30px;
+	margin: 0 auto 2em auto;
+	padding: 0;
+	text-align: center;
+	width: 640px;
 
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+
+}
 #headerPanelLinkBox ul {
-    list-style-type: none;
-    padding: 0px;
-    margin: 0px;
-    border: none;
-    overflow: hidden;
-}
-
+	list-style: none;
+	margin: 0 auto;
+	width: 640px;
+	}
 #headerPanelLinkBox li {
-    display: inline;
-    float: left;
-    /*white-space: nowrap;*/
-    padding: 0px;
-    margin: 0px;
+	float: left; 
+	display: inline; 
+	margin:0;
+	} 
+
+
+#headerPanelLinkBox a:link, #headerPanelLinkBox a:visited {
+	color: #fff;
+	display: inline-block;
+	height: 30px;
+	padding: 5px 1.5em;
+	text-decoration: none;
+}
+#headerPanelLinkBox a:hover, #headerPanelLinkBox a:active,
+#headerPanelLinkBox .active a:link, #headerPanelLinkBox .active a:visited {
+	background: rgb(15,173,247);
+	color: #fff;
+	text-shadow: none !important;
 }
 
-#headerPanelLinkBox a:link, a:visited {
-    display: block;
-    border-width: 1px;
-    border-style: solid;
-    border-color: black;
-    width: 80px;
-    height: 32px;
-    
-    /*padding-top: 8px;*/
-    
-    margin-left: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    
-    color: black;
-    font-weight: bold;
-    text-align: center;
-    font-size: 1.2em;
-    
-    background-color: white;
-    text-decoration: none;
+#headerPanelLinkBox li:first-child a{
+	border-top-left-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-webkit-border-top-left-radius: 5px;
+
+	border-bottom-left-radius: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+}
+ #headerPanelLinkBox li:last-child a{
+	border-top-right-radius: 5px;
+	-moz-border-radius-topright: 5px;
+	-webkit-border-top-right-radius: 5px;
+
+	border-bottom-right-radius: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-webkit-border-bottom-right-radius: 5px;
 }
 
-#headerPanelLinkBox a:hover {
-    color: gray;
-    border-color: gray;
-}
 
-#headerPanelLinkBox a:active {
-    border-color: red;
-}
+
 /* -------------------------------------------------------------------------- */
 
 .editForm {
