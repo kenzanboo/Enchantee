@@ -10,21 +10,13 @@ category_list=["Music", "Sports", "Politics", "Fashion", "Movies", "Television",
   Category.create(:name=>category)
 end
 
-latitude= 37.875582 + (rand()-0.5)/1000
-longitude= -122.25856 + (rand()-0.5)/1000
-@max=User.create(:username=>"max", :first_name=>"Max", :last_name=>"Johnson", :password=>"fuckyocouch", :password_confirmation=>"fuckyocouch", :latitude=>latitude, :longitude=>longitude, :photo=>"demo_profile_pics/max.jpg");
+@max=User.create(:username=>"max", :first_name=>"Max", :last_name=>"Johnson", :password=>"fuckyocouch", :password_confirmation=>"fuckyocouch", :latitude=>37.876, :longitude=>-122.259, :photo=>"demo_profile_pics/max.jpg");
 
-latitude= 37.875582 + (rand()-0.5)/1000
-longitude= -122.25856 + (rand()-0.5)/1000
-@ryan=User.create(:username=>"ryan", :first_name=>"Ryan", :last_name=>"Spore", :password=>"fuckyocouch", :password_confirmation=>"fuckyocouch", :latitude=>latitude, :longitude=>longitude, :photo=>"demo_profile_pics/ryan.jpg");
+@ryan=User.create(:username=>"ryan", :first_name=>"Ryan", :last_name=>"Spore", :password=>"fuckyocouch", :password_confirmation=>"fuckyocouch", :latitude=>37.8751, :longitude=>-122.258, :photo=>"demo_profile_pics/ryan.jpg");
 
-latitude= 37.875582 + (rand()-0.5)/1000
-longitude= -122.25856 + (rand()-0.5)/1000
-@serban=User.create(:username=>"serban", :first_name=>"Serban", :last_name=>"Giuroiu", :password=>"fuckyocouch", :password_confirmation=>"fuckyocouch", :latitude=>latitude, :longitude=>longitude, :photo=>"demo_profile_pics/serban.jpg");
+@serban=User.create(:username=>"serban", :first_name=>"Serban", :last_name=>"Giuroiu", :password=>"fuckyocouch", :password_confirmation=>"fuckyocouch", :latitude=>37.8756, :longitude=>-122.259, :photo=>"demo_profile_pics/serban.jpg");
 
-latitude= 37.875582 + (rand()-0.5)/1000
-longitude= -122.25856 + (rand()-0.5)/1000
-@kenzan=User.create(:username=>"kenzan", :first_name=>"Kenzan", :last_name=>"Boo", :password=>"fuckyocouch", :password_confirmation=>"fuckyocouch", :latitude=>latitude, :longitude=>longitude, :photo=>"demo_profile_pics/kenzan.jpg");
+@kenzan=User.create(:username=>"kenzan", :first_name=>"Kenzan", :last_name=>"Boo", :password=>"fuckyocouch", :password_confirmation=>"fuckyocouch", :latitude=>37.876, :longitude=>-122.259, :photo=>"demo_profile_pics/kenzan.jpg");
 
 music_names=["The Beatles", "Charles Mingus", "Estradasphere", "Blackalicious", "Jeff Beck", "Joshua Redman", "Queen", "Girl Talk", "Muse", "AC/DC", "The Killers", "Pretty Lights", "Bassnectar", "Vivaldi", "Red Hot Chili Peppers"]
 movie_names=["Snatch", "Pirates", "WALL-E", "Scarface", "Better Luck Tomorrow", "Catch Me If You Can", "Forrest Gump"]
