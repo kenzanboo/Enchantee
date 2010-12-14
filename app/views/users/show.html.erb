@@ -1,6 +1,6 @@
-<h1><%= h @user.name %> <%= render :partial => 'show_saver', :locals=>{:user_id=>current_user.id, :friend_id=>@user.id} %></h1>
+<%= image_tag(@user.photo, :class => "profile_pic") if @user.photo %><h1 class="profile_name"><%= h @user.name %> <%= render :partial => 'show_saver', :locals=>{:user_id=>current_user.id, :friend_id=>@user.id} %></h1>
 
-<h2><%= h @user.first_name %> is interested in &#8230</h2>
+<h2 class="clear"><%= h @user.first_name %> is interested in &#8230</h2>
 
 <table class="interestTable">
   <tr>

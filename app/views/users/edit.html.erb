@@ -41,6 +41,11 @@
     <%= f.label :last_name, "Last Name" %>
     <%= f.text_field :last_name %>
   </div>
+
+  <div class="editFormEntry">
+	<%= f.label :photo, "Photo URL" %>
+	<%= f.text_field :photo %>
+  </div>
   
 	<div id="interests">
 		<%= render :partial => 'edit_interest_read_only', :collection => @user.interests, :as => :interest %>

@@ -225,6 +225,17 @@ h2 {
 
 /* -------------------------------------------------------------------------- */
 
+.profile_pic {
+	width: 64px;
+	display: inline;
+	float: left;
+	margin-bottom: 1em;
+}
+
+.profile_name {
+	margin-left: 74px;
+}
+
 .userInfoPartial {
     margin: 6px;
 }
