@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(:version => 20101213172104) do
     t.string   "username"
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "photo"
+    t.string   "photo", :default => "default_user_pic.jpg"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "crypted_password"
