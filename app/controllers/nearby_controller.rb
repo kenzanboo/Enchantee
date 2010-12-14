@@ -1,6 +1,6 @@
 class NearbyController < ApplicationController
   
-  before_filter :check_location
+  before_filter :require_location
   
   RADIUS = 0.2
   
@@ -28,14 +28,6 @@ class NearbyController < ApplicationController
   end
   
   private
-    def check_location()
-      #raise "Error: User has no location" 
-      unless current_user != nil and current_user.latitude != nil and current_user.longitude != nil
-        redirect_to location_path()
-        return false
-      end
-    end
-  
     def make_marker(user)
       Marker.new(user.latitude, 
                  user.longitude, 

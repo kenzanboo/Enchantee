@@ -43,6 +43,13 @@ class ApplicationController < ActionController::Base
       end
     end
     
+    def require_location
+      unless current_user != nil and current_user.latitude != nil and current_user.longitude != nil
+        redirect_to location_path()
+        return false
+      end
+    end
+    
     def store_location
       session[:return_to] = request.request_uri
     end
