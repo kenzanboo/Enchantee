@@ -6,10 +6,10 @@ class FriendshipsController < ApplicationController
       @friendship = current_user.friendships.build(:friend_id => params[:friend_id])
 
       if @friendship.save
-        redirect_to(user_path(params[:friend_id]), :notice => 'Added friend.'); return
+        redirect_to(user_path(params[:friend_id]), :notice => ''); return
       end
     end
-    redirect_to(user_path(params[:friend_id]), :notice => 'Unable to add friend.')
+    redirect_to(user_path(params[:friend_id]), :notice => 'Unable to save')
   end
 
   # DELETE /friendships/1
@@ -17,6 +17,6 @@ class FriendshipsController < ApplicationController
   def destroy
     @friendship = current_user.friendships.find_by_friend_id(params[:friend_id])
     @friendship.destroy
-    redirect_to(user_path(current_user), :notice => 'Removed bookmarked.')
+    redirect_to(user_path(params[:friend_id]), :notice => '')
   end
 end
