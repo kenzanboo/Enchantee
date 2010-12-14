@@ -1,4 +1,4 @@
 <div class="">
-    <%= image_tag(user.photo, :class => "profile_pic") if user.photo %>
+    <%= image_tag(user.photo, :alt => "", :class => "profile_pic") if user.photo %>
 	<%= link_to h(user.name), (user_path(user))%>
 </div>
