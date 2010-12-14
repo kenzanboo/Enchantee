@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :password
       t.string :first_name
       t.string :last_name
-      t.string :photo
+      t.string :photo, :default => "default_user_pic.jpg"
       t.float :latitude
       t.float :longitude
 
