@@ -6,6 +6,7 @@
     (<%= number_with_precision user.distance, :precision => 2 %> mi)
   <%end%>
   <br />
+  <br />
 
   <% user.categories.each do |category| %>
     <span class="userInfoPartialCategory"><%= h category.name %></span>:

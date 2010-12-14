@@ -1,5 +1,12 @@
 <h1>What are you interested in today?</h1>
 <div class="statusForm">
+  <div id="current_interest">
+		<% if user.current_interest_id>0 %>
+			<%= render :partial => 'current_interest_show', :locals=>{:interest=>user.interests.find(user.current_interest_id)}%>
+		<%end%>
+	</div>
+	<br/>
+	
 	<% remote_form_for :interest, :url => {:controller => :users, :action => 'current_interest' },
 	:update => 'current_interest' do |interest_form| %>
 	  <!-- <%= h interest_form.label(:category_id) %> -->
@@ -10,10 +17,4 @@
   
   	<%= interest_form.submit 'Update' %>
 	<% end %>
-	
-	<div id="current_interest">
-		<% if user.current_interest_id>0 %>
-			<%= render :partial => 'current_interest_show', :locals=>{:interest=>user.interests.find(user.current_interest_id)}%>
-		<%end%>
-	</div>
 </div>

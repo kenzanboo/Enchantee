@@ -129,6 +129,6 @@ class UsersController < ApplicationController
     end
     current_user.current_interest_id=int.id
     current_user.save
-    render :partial => 'current_interest_show', :locals=>{:interest=>int}
+    render :partial => 'nearby/current_interest_show', :locals=>{:interest=>int}
   end
 end
