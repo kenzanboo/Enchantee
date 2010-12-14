@@ -3,7 +3,7 @@
   <%= link_to h(user.name), user_path(user) %>
 
   <% if user.respond_to?(:distance)%>
-    (<%= number_with_precision user.distance, :precision => 2 %> mi)
+    <span class="userInfoPartialDistance">(<%= number_with_precision user.distance, :precision => 2 %> mi)</span>
   <%end%>
   <br />
   <br />

@@ -242,12 +242,51 @@ h2 {
     margin: 6px;
 }
 
-.userInfoPartialCategory {
-    font-weight: bold;
+.userInfoPartial {
+	background: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0, rgb(255,255,255)),
+	    color-stop(0.52, rgb(235,220,250)),
+	    color-stop(1, rgb(255,255,255))
+	);
+	
+	background: -moz-linear-gradient(
+	    center bottom,
+	    rgb(255,255,255) 0%,
+	    rgb(235,220,250) 52%,
+	    rgb(255,255,255) 100%
+	);
+
+	padding: 15px;
+
+	border-color:rgb(195,179,209);
+	border-style: solid;
+	border-width:2px;
+		
+
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
 }
 
-.userInfoPartialInterest {
-    /*border-bottom: 1px dotted #ba0000;*/
+.userInfoPartial a:link, .userInfoPartial a:visited {
+		background: rgb(255,255,255);
+		height: 30px;
+		line-height: 30px;
+		padding: 3px;
+		text-align: center;
+		color: rgb(70,31,107);
+		font-size: 1.1em;
+		
+	    border-color:rgb(219,202,235);
+		border-style: solid;
+		border-width:1px;
+		
+		border-radius: 5px;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
 }
 
 .userInfoPartialInterest{
@@ -266,57 +305,14 @@ h2 {
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
-	
 }
 
-.userInfoPartial{
-	
-	background: -webkit-gradient(
-	    linear,
-	    left bottom,
-	    left top,
-	    color-stop(0, rgb(255,255,255)),
-	    color-stop(0.52, rgb(235,220,250)),
-	    color-stop(1, rgb(255,255,255))
-	);
-	background: -moz-linear-gradient(
-	    center bottom,
-	    rgb(255,255,255) 0%,
-	    rgb(235,220,250) 52%,
-	    rgb(255,255,255) 100%
-	);
-
-	
-	padding: 15px;
-
-	border-color:rgb(195,179,209);
-	border-style: solid;
-	border-width:2px;
-		
-
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	
+.userInfoPartialCategory {
+    font-weight: bold;
 }
 
-
-.userInfoPartial a:link, .userInfoPartial a:visited{
-		background: rgb(255,255,255);
-		height: 30px;
-		line-height: 30px;
-		padding: 3px;
-		text-align: center;
-		color: rgb(70,31,107);
-		font-size: 1.1em;
-		
-	    border-color:rgb(219,202,235);
-		border-style: solid;
-		border-width:1px;
-		
-		border-radius: 5px;
-		-moz-border-radius: 5px;
-		-webkit-border-radius: 5px;
+.userInfoPartialDistance {
+    font-size: 1.1em;
 }
 
 /* -------------------------------------------------------------------------- */
